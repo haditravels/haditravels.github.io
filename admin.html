@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+
+  button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+
+  #messageDiv {
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+  }
+    h1, h2 {
+    text-align: center;
+  }
+</style>
+  <title>Admin Panel</title>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+</head>
+<body>
+    <h1>ADMIN PANEL(Hadi Travels)</h1>
+  <h2>Login to Manage Packages</h2>
+  <label for="email">Email:</label>
+  <input type="email" id="email" placeholder="Enter your email">
+  <label for="password">Password:</label>
+  <input type="password" id="password" placeholder="Enter your password">
+  <button id="loginButton" onclick="login()">Login</button>
+
+  <h2>Add new Package</h2>
+  <input type="text" id="itemName" placeholder="Enter Package name">
+    <input type="text" id="itemPrice" placeholder="Enter Package price">
+    <label for="itemImageInput">Select Package image:</label>
+    <input type="file" id="itemImageInput" accept="image/*">
+  <input type="text" id="itemDescription" placeholder="Enter Package description">
+  <button id="saveItemButton" onclick="saveItem()" disabled>Save Item</button>
+
+  <h2>Remove Existing Package </h2>
+  <input type="text" id="itemIdToRemove" placeholder="Enter Package name to remove">
+  <button id="removeItemButton" onclick="removeItem()" disabled>Remove Item</button>
+
+  <div id="messageDiv"></div>
+
+  <script>
+    var firebaseConfig = {
+      // Your Firebase configuration here
+      apiKey: "AIzaSyBORetEdl7Ed7aX0Z03ZiQ2rrzCEvrn-go",
+  authDomain: "haditravels-ef4b0.firebaseapp.com",
+  projectId: "haditravels-ef4b0",
+  storageBucket: "haditravels-ef4b0.appspot.com",
+  messagingSenderId: "212772020766",
+  appId: "1:212772020766:web:79b0ab9de3b7ae9ad8440f",
+  measurementId: "G-9ECQV4PQSX"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    var database = firebase.database();
+    var itemsRef = database.ref("menu");
+
+    function showMessage(message, isError) {
+      var messageDiv = document.getElementById("messageDiv");
+      messageDiv.innerHTML = message;
+      messageDiv.style.color = isError ? "red" : "green";
+    }
+
+    function login() {
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      var loginButton = document.getElementById("loginButton");
+      loginButton.disabled = true;
+
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(function(userCredential) {
+          var user = userCredential.user;
+          console.log("User logged in successfully:", user);
+          enableButtons();
+          showMessage("Login successful!", false);
+        })
+        .catch(function(error) {
+          console.error("Error logging in: ", error);
+          loginButton.disabled = false;
+          showMessage("Error logging in. Please check your credentials.", true);
+        });
+    }
+
+    function enableButtons() {
+      var saveItemButton = document.getElementById("saveItemButton");
+      var removeItemButton = document.getElementById("removeItemButton");
+
+      saveItemButton.disabled = false;
+      removeItemButton.disabled = false;
+    }
+
+    function saveItem() {
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      var saveItemButton = document.getElementById("saveItemButton");
+      saveItemButton.disabled = true;
+
+      var itemName = document.getElementById("itemName").value;
+      var itemPrice = document.getElementById("itemPrice").value;
+      var itemImageInput = document.getElementById("itemImageInput");
+      var itemDescription = document.getElementById("itemDescription").value;
+      var itemId = itemName;
+
+      var item = {
+        image: "", // You will need to upload the image to a storage service and get the URL
+        name: itemName,
+        price: itemPrice,
+        description: itemDescription
+      };
+
+      // Upload the image to a storage service and get the URL
+      var file = itemImageInput.files[0];
+      var storageRef = firebase.storage().ref('itemImages/' + file.name);
+      var task = storageRef.put(file);
+
+      task.on('state_changed',
+        function progress(snapshot) {
+          var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log('Upload is ' + percentage + '% done');
+        },
+        function error(err) {
+          console.error("Error uploading image: ", err);
+          showMessage("Error uploading image. Please try again.", true);
+        },
+        function complete() {
+          task.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+            item.image = downloadURL;
+            // Save the item with the image URL
+            itemsRef.child(itemId).set(item)
+              .then(function() {
+                console.log("Item saved successfully!");
+                showMessage("Item saved successfully!", false);
+              })
+              .catch(function(error) {
+                console.error("Error saving item: ", error);
+                showMessage("Error saving item. Please try again.", true);
+              });
+
+            saveItemButton.disabled = false;
+          });
+        }
+      );
+    } else {
+      console.error("User not logged in. Please log in to add items.");
+    }
+  });
+}
+
+    function removeItem() {
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          var removeItemButton = document.getElementById("removeItemButton");
+          removeItemButton.disabled = true;
+
+          var itemIdToRemove = document.getElementById("itemIdToRemove").value;
+
+          itemsRef.child(itemIdToRemove).remove()
+            .then(function() {
+              console.log("Item removed successfully!");
+              showMessage("Item removed successfully!", false);
+            })
+            .catch(function(error) {
+              console.error("Error removing item: ", error);
+              showMessage("Error removing item. Please try again.", true);
+            });
+
+          removeItemButton.disabled = false;
+        } else {
+          console.error("User not logged in. Please log in to remove items.");
+        }
+      });
+    }
+  </script>
+</body>
+</html>
