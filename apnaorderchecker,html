@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Define CSS styles */
+    .list-item {
+      background-color: #f0f0f0;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+  </style>
+  <title>Firebase Realtime Database Example</title>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+</head>
+<body>
+  <h1>Orders</h1>
+  <ul id="menu-container"></ul>
+  <script>
+    // Initialize Firebase
+    const firebaseConfig = {apiKey: "AIzaSyDMSGsbkHALvkiS4mcBdRmx__ybdz_pA18",
+    apiKey: "AIzaSyBORetEdl7Ed7aX0Z03ZiQ2rrzCEvrn-go",
+  authDomain: "haditravels-ef4b0.firebaseapp.com",
+  databaseURL: "https://haditravels-ef4b0-default-rtdb.firebaseio.com",
+  projectId: "haditravels-ef4b0",
+  storageBucket: "haditravels-ef4b0.appspot.com",
+  messagingSenderId: "212772020766",
+  appId: "1:212772020766:web:79b0ab9de3b7ae9ad8440f",
+  measurementId: "G-9ECQV4PQSX"
+      // Your Firebase config here
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    // Reference to the 'menu' container in the database
+    const menuRef = firebase.database().ref('orders');
+
+    // Fetch the data from Firebase
+    menuRef.on('value', (snapshot) => {
+      const menuData = snapshot.val();
+      const menuContainer = document.getElementById('menu-container');
+
+      // Clear existing menu items
+      menuContainer.innerHTML = '';
+
+      // Display the data
+      Object.values(menuData).forEach((menuItem) => {
+        const { place, date, peopleno, contact } = menuItem;
+
+        const listItem = document.createElement('li');  
+        listItem.innerHTML = `
+          <strong>Place:</strong> ${place}<br>
+          <strong>Date:</strong> ${date}<br>
+          <strong>People No:</strong> ${peopleno}<br>
+          <strong>Contact no:</strong> <a href="tel:${contact}"><u>Call ${contact}</u></a>
+
+          -----------------------<br>
+        `;
+
+        menuContainer.appendChild(listItem);
+      });
+    });
+  </script>
+</body>
+</html>
