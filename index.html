@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hadi Travels</title>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -52,22 +53,28 @@
       <form action="">
         <div class="inputBox">
           <span>Where to?</span>
-          <input type="text" placeholder="place name" value="" />
+          <input id="place" 
+          type="text" placeholder="place name" value="" />
         </div>
 
         <div class="inputBox">
           <span>When?</span>
-          <input type="date" value="" />
+          <input 
+          id="date" type="date" value="" />
         </div>
 
         <div class="inputBox">
           <span>How many?</span>
-          <input type="number" placeholder="Number of people" value="" />
+          <input id="peopleno"
+
+          type="number" placeholder="Number of people" value="" />
         </div>
 
         <div class="inputBox">
           <span>Your Contact Number</span>
-          <input type="text" placeholder="Enter your cell" value="" />
+        
+          <input id="contact"
+           type="text" placeholder="Enter your cell" value="" />
         </div>
 
         <input type="submit" value="Register Now" class="btn" />
@@ -103,7 +110,10 @@
         <a href="#" class="btn">Read More</a>
       </div>
     </section>
-
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
