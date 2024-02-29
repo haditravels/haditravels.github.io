@@ -101,7 +101,7 @@ form.addEventListener("submit", async (e) => {
     place,
     date,
     contact,
-    peopleNo,
+    peopleno,
   });
   alert("Your request is recorded. Our team will contact you soon");
   // Initialize Email.js with the Public Key
