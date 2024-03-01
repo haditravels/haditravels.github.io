@@ -64,17 +64,7 @@ document
     };
   });
 //form backend start
-// Initialize Firebase
-var firebaseConfig = {
-  apiKey: "AIzaSyBORetEdl7Ed7aX0Z03ZiQ2rrzCEvrn-go",
-  authDomain: "haditravels-ef4b0.firebaseapp.com",
-  databaseURL: "https://haditravels-ef4b0-default-rtdb.firebaseio.com",
-  projectId: "haditravels-ef4b0",
-  storageBucket: "haditravels-ef4b0.appspot.com",
-  messagingSenderId: "212772020766",
-  appId: "1:212772020766:web:79b0ab9de3b7ae9ad8440f",
-  measurementId: "G-9ECQV4PQSX",
-};
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
