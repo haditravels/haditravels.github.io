@@ -78,7 +78,7 @@
 
 @media (max-width: 768px) {
   .header {
-    .navbar {
+    /* .navbar {
       position: absolute;
       top: 99%;
       right: 0;
@@ -94,10 +94,10 @@
       margin: 2rem;
       font-size: 2rem;
       display: block;
-    }
+    } */
   }
 
-  #menu {
+  .packages .packages-box-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
@@ -109,7 +109,7 @@
 /* small screen */
 
 @media (max-width: 450px) {
-  #menu {
+  .packages .packages-box-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(1, 1fr);
