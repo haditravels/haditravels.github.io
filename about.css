@@ -1,0 +1,54 @@
+:root {
+  --blue-color: #29d9d5;
+  --black-color: #111;
+  --white-color: #fff;
+  --light-color: #aaa;
+  --bg-color: #222;
+  --black-bg: rgba(17, 17, 17, 0.7);
+  --border: 0.2rem solid #29d9d5;
+}
+
+/*-----------------------------------------------About--------------------------------------- */
+
+.heading {
+  position: relative;
+  transform: translateX(-4%);
+  margin-top: 15rem;
+}
+
+.about-content .btn {
+  margin-bottom: 2rem;
+}
+
+.about .section-text {
+  margin-block: 15px 30px;
+}
+
+.about-para {
+  padding: 1rem;
+  font-size: 1.4rem;
+  color: var(--light-color);
+  line-height: 2;
+}
+
+.ceo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ceo-content {
+  color: var(--white-color);
+}
+
+/* ----------------------------------------------------------Breakpoints------------------------------------- */
+
+/* medium screen */
+
+@media (max-width: 450px) {
+  .heading {
+    margin-top: 10rem;
+    position: relative;
+    /* left: 12%; */
+  }
+}

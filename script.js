@@ -4,7 +4,7 @@ document.querySelector("#menu-btn").onclick = () => {
   navbar.classList.toggle("active");
 };
 
-// Hero section slider
+//----------------------------------------------- Hero section slider------------------------------
 let nextDom = document.getElementById("next");
 let prevDom = document.getElementById("prev");
 
@@ -54,7 +54,7 @@ function showSlider(type) {
   }, timeAutoNext);
 }
 
-// about us video slider
+// ------------------------------------------------about us video slider-------------------------------------
 document
   .querySelectorAll(".about .video-container .controls .control-btn")
   .forEach((btn) => {
@@ -63,6 +63,29 @@ document
       document.querySelector(".about .video-container .video").src = src;
     };
   });
+
+// -------------------------------------------------Parallax Effect----------------------------------------------
+
+const parallaxItems = document.querySelectorAll("[data-parallax-item]");
+
+window.addEventListener("mousemove", function (event) {
+  const mouseX = (event.clientX / window.innerWidth) * 10 - 5;
+  const mouseY = (event.clientY / window.innerHeight) * 10 - 5;
+
+  for (let i = 0, len = parallaxItems.length; i < len; i++) {
+    const x = mouseX - mouseX * 2;
+    const y = mouseY - mouseY * 2;
+    const speed = Number(parallaxItems[i].dataset.parallaxSpeed);
+
+    const translateX = x * speed;
+    const translateY = y * speed;
+
+    parallaxItems[
+      i
+    ].style.transform = `translate3d(${translateX}px, ${translateY}px, 0px)`;
+  }
+});
+
 //form backend start
 
 // Initialize Firebase

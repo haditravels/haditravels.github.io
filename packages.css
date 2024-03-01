@@ -1,13 +1,11 @@
 .heading {
-  margin-top: 15rem;
+  margin-top: 25rem;
 }
 
 #menu {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 15px;
-  grid-row-gap: 15px;
+  grid-gap: 30px;
 }
 
 .box {
@@ -45,7 +43,7 @@
       font-size: 1.4rem;
       color: var(--light-color);
       line-height: 2;
-      line-break: anywhere;
+      line-break: auto;
     }
 
     h4 {
@@ -72,48 +70,24 @@
   }
 }
 
-/* ----------------------------------------------------------Breakpoints------------------------------------- */
-
-/* medium screen */
-
 @media (max-width: 768px) {
-  .header {
-    /* .navbar {
-      position: absolute;
-      top: 99%;
-      right: 0;
-      left: 0;
-      background: var(--bg-color);
-      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-
-      &.active {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-      }
-    }
-    a {
-      margin: 2rem;
-      font-size: 2rem;
-      display: block;
-    } */
-  }
-
-  .packages .packages-box-container {
+  #menu {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
+    grid-gap: 30px;
   }
 }
 
 /* small screen */
 
 @media (max-width: 450px) {
-  .packages .packages-box-container {
+  html {
+    font-size: 50%;
+  }
+
+  #menu {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
+    grid-gap: 30px;
   }
 }
