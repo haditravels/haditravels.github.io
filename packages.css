@@ -8,7 +8,7 @@
   grid-gap: 30px;
 }
 
-.box {
+.packagesBox {
   border-radius: 1rem;
   background-color: var(--bg-color);
   overflow: hidden;

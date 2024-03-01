@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=], initial-scale=1.0" />
+
+    <link rel="stylesheet" href="contact.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Contact Us</title>
+  </head>
+  <body>
+    <div class="background"></div>
+
+    <header>
+      <div class="container">
+        <ul>
+          <li>
+            <a href="../index.html" class="logo">
+              <div class="images">
+                <h2>
+                  Hadi Travels<span>.</span> <i class="ri-home-2-fill"></i>
+                </h2>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="../index.html" class="nav__link">Home</a>
+          </li>
+          <li>
+            <a href="#" class="nav__link theme-toggle">
+              <i class="ri-sun-fill sun"></i>
+              <i class="ri-moon-fill moon"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="contact-page">
+        <div class="container">
+          <div class="left">
+            <div class="form__wrapper">
+              <div class="contact__heading">
+                <h1>Lets Work Together<span>.</span></h1>
+                <p class="text">
+                  Or reach us via:
+                  <a href="mailto:realtorscompany77@gmail.com">
+                    Realtors@gmail.com
+                  </a>
+                </p>
+              </div>
+
+              <form action="contact.html" method="post" class="contact__form">
+                <div class="input__wrap">
+                  <input
+                    class="contact__input"
+                    autocomplete="off"
+                    name="First Name"
+                    type="text"
+                    required
+                  />
+                  <label>First Name</label>
+                  <i class="icon fa-solid fa-address-card"></i>
+                </div>
+
+                <div class="input__wrap">
+                  <input
+                    class="contact__input"
+                    autocomplete="off"
+                    name="Last Name"
+                    type="text"
+                    required
+                  />
+                  <label>Last Name</label>
+                  <i class="icon fa-solid fa-address-card"></i>
+                </div>
+
+                <div class="input__wrap w-100">
+                  <input
+                    class="contact__input"
+                    autocomplete="off"
+                    name="Email"
+                    type="text"
+                    required
+                  />
+                  <label>Email</label>
+                  <i class="icon fa-solid fa-envelope"></i>
+                </div>
+
+                <div class="input__wrap textarea w-100">
+                  <textarea
+                    class="contact__input"
+                    name="Message"
+                    autocomplete="off"
+                    required
+                  ></textarea>
+                  <label>Message</label>
+                  <i class="icon fa-solid fa-inbox"></i>
+                </div>
+
+                <div class="contact__buttons">
+                  <button class="btn upload">
+                    <span>
+                      <i class="fa-solid fa-paperclip"></i> Add Attachement
+                    </span>
+                    <input type="file" name="attachement" />
+                  </button>
+                  <input type="submit" value="Send message" class="btn" />
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="image__wrapper">
+              <img class="img" src="../images/contact.jpg" alt="" />
+              <div class="wave__wrap">
+                <svg
+                  class="wave"
+                  viewBox="0 0 783 1536"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    id="wave"
+                    d="M236.705 1356.18C200.542 1483.72 64.5004 1528.54 1 1535V1H770.538C793.858 63.1213 797.23 196.197 624.165 231.531C407.833 275.698 274.374 331.715 450.884 568.709C627.393 805.704 510.079 815.399 347.561 939.282C185.043 1063.17 281.908 1196.74 236.705 1356.18Z"
+                  />
+                </svg>
+              </div>
+              <svg
+                class="dashed__wave"
+                viewBox="0 0 345 877"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  id="dashed-wave"
+                  d="M0.5 876C25.6667 836.167 73.2 739.8 62 673C48 589.5 35.5 499.5 125.5 462C215.5 424.5 150 365 87 333.5C24 302 44 237.5 125.5 213.5C207 189.5 307 138.5 246 87C185 35.5 297 1 344.5 1"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="contact.js"></script>
+  </body>
+</html>
