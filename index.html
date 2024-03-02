@@ -12,14 +12,21 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Preloader -->
+    <div class="preload" data-preaload>
+      <div class="circle"></div>
+      <p class="text">Hadi-Travels</p>
+    </div>
+
     <!--------------------------------------------------------- Header ------------------------------------------->
 
     <div class="header">
       <div id="menu-btn"><i class="fa-solid fa-bars"></i></div>
-      <a href="#"><img class="logo" src="images/logo.png" /></a>
+      <a href="#"><img class="logo" src="images/logo hadi.png" /></a>
 
       <nav class="navbar">
         <a href="#">Home</a>
@@ -113,44 +120,32 @@
         <div class="item">
           <img src="images/slider1.jpg" />
           <div class="content">
-            <div class="title">Name Slider</div>
-            <div class="thumbnail-des">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae,
-              officiis!
-            </div>
+            <div class="title"></div>
+            <div class="thumbnail-des"></div>
           </div>
         </div>
 
         <div class="item">
           <img src="images/slider2.jpg" />
           <div class="content">
-            <div class="title">Name Slider</div>
-            <div class="thumbnail-des">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae,
-              officiis!
-            </div>
+            <div class="title"></div>
+            <div class="thumbnail-des"></div>
           </div>
         </div>
 
         <div class="item">
           <img src="images/slider3.jpg" />
           <div class="content">
-            <div class="title">Name Slider</div>
-            <div class="thumbnail-des">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae,
-              officiis!
-            </div>
+            <div class="title"></div>
+            <div class="thumbnail-des"></div>
           </div>
         </div>
 
         <div class="item">
           <img src="images/slider4.jpg" />
           <div class="content">
-            <div class="title">Name Slider</div>
-            <div class="thumbnail-des">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae,
-              officiis!
-            </div>
+            <div class="title"></div>
+            <div class="thumbnail-des"></div>
           </div>
         </div>
       </div>
@@ -220,7 +215,7 @@
         </div>
       </div>
 
-      <div class="content">
+      <div class="content" data-aos="fade-left">
         <span>Why Choose Us?</span>
         <h3>Nature's majesty awaits you</h3>
         <p>
@@ -240,7 +235,7 @@
       </div>
 
       <div class="box-container">
-        <div class="box">
+        <div class="box" data-aos="zoom-in-up">
           <div class="image">
             <img class="pack-img" loading="lazy" src="images/package 1.jpg" />
           </div>
@@ -256,7 +251,7 @@
           </div>
         </div>
 
-        <div class="box">
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="200">
           <div class="image">
             <img class="pack-img" loading="lazy" src="images/package 2.jpg" />
           </div>
@@ -272,7 +267,7 @@
           </div>
         </div>
 
-        <div class="box">
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
           <div class="image">
             <img class="pack-img" loading="lazy" src="images/package 3.jpg" />
           </div>
@@ -288,7 +283,7 @@
           </div>
         </div>
 
-        <div class="box">
+        <div class="box" data-aos="zoom-in-down" data-aos-delay="350">
           <div class="image">
             <img class="pack-img" loading="lazy" src="images/package 4.jpg" />
           </div>
@@ -304,7 +299,7 @@
           </div>
         </div>
 
-        <div class="box">
+        <div class="box" data-aos="zoom-in-down" data-aos-delay="450">
           <div class="image">
             <img class="pack-img" loading="lazy" src="images/package 6.jpg" />
           </div>
@@ -320,7 +315,7 @@
           </div>
         </div>
 
-        <div class="box">
+        <div class="box" data-aos="zoom-in-down" data-aos-delay="550">
           <div class="image">
             <img class="pack-img" loading="lazy" src="images/package 5.jpg" />
           </div>
@@ -347,7 +342,7 @@
       </div>
 
       <div class="box-container">
-        <div class="box">
+        <div class="box" data-aos="flip-left">
           <i class="fa-solid fa-globe"></i>
           <h3>WorldWide</h3>
           <p>
@@ -355,7 +350,7 @@
           </p>
         </div>
 
-        <div class="box">
+        <div class="box" data-aos="flip-right" data-aos-delay="200">
           <i class="fa-solid fa-person-hiking"></i>
           <h3>Adventures</h3>
           <p>
@@ -363,7 +358,7 @@
           </p>
         </div>
 
-        <div class="box">
+        <div class="box" data-aos="flip-left" data-aos-delay="300">
           <i class="fa-solid fa-utensils"></i>
           <h3>Food & Drinks</h3>
           <p>
@@ -371,7 +366,7 @@
           </p>
         </div>
 
-        <div class="box">
+        <div class="box" data-aos="flip-right">
           <i class="fa-solid fa-hotel"></i>
           <h3>Affordable Hotels</h3>
           <p>
@@ -379,7 +374,7 @@
           </p>
         </div>
 
-        <div class="box">
+        <div class="box" data-aos="flip-left" data-aos-delay="300">
           <i class="fa-solid fa-wallet"></i>
           <h3>Affordable Prices</h3>
           <p>
@@ -387,7 +382,7 @@
           </p>
         </div>
 
-        <div class="box">
+        <div class="box" data-aos="flip-right" data-aos-delay="400">
           <i class="fa-solid fa-headset"></i>
           <h3>24/7 Customer Support</h3>
           <p>
@@ -404,37 +399,37 @@
         <h1>Our Memories</h1>
       </div>
       <div class="box-container">
-        <div class="box">
+        <div class="box" data-aos="zoom-in">
           <img loading="lazy" src="images/gallery 1.jpg" />
           <span>Travels spot</span>
           <h3>Murree</h3>
         </div>
 
-        <div class="box">
+        <div class="box" data-aos="zoom-in-up">
           <img loading="lazy" src="images/gallery 2.jpg" />
           <span>Honeymoon</span>
           <h3>Miami</h3>
         </div>
 
-        <div class="box">
+        <div class="box" data-aos="zoom-in-down">
           <img loading="lazy" src="images/gallery 3.jpg" />
           <span>Hooneymoon</span>
           <h3>Egypt</h3>
         </div>
 
-        <div class="box">
+        <div class="box" data-aos="zoom-in-down">
           <img loading="lazy" src="images/gallery 4.jpg" />
           <span>Travels Spot</span>
           <h3>Streets of Thailand</h3>
         </div>
 
-        <div class="box">
+        <div class="box" data-aos="zoom-in-up">
           <img loading="lazy" src="images/gallery 5.jpg" />
           <span>Family Vacation</span>
           <h3>Japan</h3>
         </div>
 
-        <div class="box">
+        <div class="box" data-aos="zoom-in-down">
           <img loading="lazy" src="images/gallery 6.jpg" />
           <span>Travels spot</span>
           <h3>Hongkong</h3>
@@ -445,9 +440,25 @@
     <div class="hr">
       <hr class="footer-hr" />
     </div>
+
+    <!--------------------------------------------------------- Banner ------------------------------------------->
+    <div class="banner">
+      <div class="content">
+        <span>Start Your Adventures</span>
+        <h3>Lets Explore this world</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus
+          aliquid, impedit consequuntur sequi mollitia, quia nostrum repellat
+          quae ipsa, perspiciatis non obcaecati autem magni. Aspernatur animi ex
+          accusantium facilis esse.
+        </p>
+        <a href="contact-page2/contact.html" class="btn">Message Now</a>
+      </div>
+    </div>
+
     <!--------------------------------------------------------- Footer ------------------------------------------->
 
-    <section class="footer">
+    <section class="footer" data-aos="zoom-out-right">
       <div class="box-container">
         <div class="box">
           <a href="#"><img class="logo" src="images/logo.png" /></a>
@@ -509,12 +520,29 @@
 
     <div class="copywrite"><span>Hadi-Travels</span> | all rights reserved</div>
 
+    <!----------------- Back to top btn ------------------>
+
+    <button onclick="scrollToTop()" class="btn-hover2" id="backToTop">
+      <i class="fa-solid fa-angle-up"></i>
+    </button>
+    <button class="btn-hover2 instagrmBar" id="instagrmBar">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    </button>
+
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
 
     <script src="firebase.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        offset: 150,
+      });
+    </script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -86,6 +86,79 @@ body {
   overflow-x: hidden;
 }
 
+/* --------------------------------------------------Preload------------------------------------------ */
+
+.preload {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--blue-color);
+  z-index: 100;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  transition: 250ms ease;
+}
+
+.preload > * {
+  transition: 250ms ease;
+}
+
+.preload.loaded > * {
+  opacity: 0;
+}
+
+.preload.loaded {
+  transition-delay: 250ms;
+  transform: translateY(100%);
+}
+
+.circle {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  border: 3px solid white;
+  border-block-start-color: hsla(0, 3%, 7%, 1);
+  margin-block-end: 45px;
+  animation: rotate360 1s linear infinite;
+}
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.preload .text {
+  background-image: var(--loading-text-gradient);
+  background-size: 500%;
+  font-size: calc(2rem + 3vw);
+  font-weight: 700;
+  line-height: 1em;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding-inline-start: 16px;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 0.5px hsla(40, 12%, 5%, 1);
+  animation: loadingText linear 2s infinite;
+}
+
+@keyframes loadingText {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
 /* ----------------------------------------------------------Header------------------------------------- */
 
 .logo {
@@ -647,6 +720,45 @@ body {
   }
 }
 
+/* ----------------------------------------------------------Banner------------------------------------- */
+
+.banner {
+  background: url(images/home1.jpg) no-repeat,
+    linear-gradient(var(--black-bg), var(--black-bg));
+  background-size: cover;
+  background-position: center;
+  padding: 3rem 0;
+  background-attachment: fixed;
+  text-align: center;
+
+  .content {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: translateX(50%);
+    span {
+      color: var(--blue-color);
+      font-size: 2rem;
+    }
+
+    h3 {
+      color: var(--white-color);
+      font-size: 4rem;
+      margin-top: 1rem;
+    }
+
+    p {
+      padding: 1rem;
+      font-size: 1.4rem;
+      color: var(--light-color);
+      line-height: 2;
+      text-align: center;
+    }
+  }
+}
+
 /* ----------------------------------------------------------Footer------------------------------------- */
 
 .footer {
@@ -765,6 +877,42 @@ form .newsletter {
   span {
     color: var(--blue-color);
   }
+}
+
+/* <!--------------------- Back to top btn ---------------> */
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  border: none;
+  padding: 17px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: var(--black-color);
+  z-index: 99999999999999999;
+  display: none;
+}
+#backToTop:hover {
+  background-color: var(--blue-color);
+}
+
+#instagrmBar {
+  position: fixed;
+  bottom: 89px;
+  right: 27px;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 99999999999999999;
+  /* display: none; */
+}
+#instagrmBar i {
+  font-size: 40px;
+  color: black;
 }
 
 /* ----------------------------------------------------------Breakpoints------------------------------------- */
@@ -930,5 +1078,10 @@ form .newsletter {
       /* margin: 2rem 0; */
       /* padding: 0 1rem; */
     }
+  }
+
+  #backToTop i {
+    font-size: 1.5rem;
+    padding: -5rem;
   }
 }

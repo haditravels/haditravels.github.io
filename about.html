@@ -11,9 +11,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- <link rel="stylesheet" href="packages.css" /> -->
     <link rel="stylesheet" href="about.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
     <!--------------------------------------------------------- Header ------------------------------------------->
@@ -45,7 +45,7 @@
             <span class="packages-span">Our Packages</span>
             <h1>Make your destination</h1>
           </div>
-          <p class="about-para">
+          <p class="about-para" data-aos="fade-left">
             Welcome to Hadi Travels , where unforgettable journeys begin. We are
             dedicated to providing exceptional travel experiences tailored to
             our clients' preferences and desires. Our team of experienced travel
@@ -78,7 +78,14 @@
             for many years to come.
           </p>
 
-          <a class="btn" href="contact-page2/contact.html">Book A Call</a>
+          <a
+            class="btn"
+            href="contact-page2/contact.html"
+            data-aos="fade-right"
+            data-aos-delay="200"
+            >Book A Call</a
+          >
+
           <hr class="about-hr" />
           <div class="ceo-section">
             <div class="image">
@@ -86,7 +93,7 @@
             </div>
             <div class="ceo-content">
               <span>CEO of Hadi travels</span>
-              <h3>Syed Anas Imam</h3>
+              <h3 data-aos="zoom-in">Syed Anas Imam</h3>
               <p>
                 As the CEO of our esteemed travel agency, your vision and
                 leadership are paramount in shaping unforgettable experiences
@@ -169,6 +176,14 @@
     </section>
 
     <div class="copywrite"><span>Hadi-Travels</span> | all rights reserved</div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        offset: 150,
+      });
+    </script>
 
     <script src="script.js"></script>
   </body>

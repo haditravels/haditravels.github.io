@@ -1,3 +1,14 @@
+// ---------------------------------------------Preload--------------------------------------------
+
+// loading will end after document is loaded
+
+const preloader = document.querySelector("[data-preaload]");
+
+window.addEventListener("load", function () {
+  preloader.classList.add("loaded");
+  document.body.classList.add("loaded");
+});
+
 let navbar = document.querySelector(".header .navbar");
 
 document.querySelector("#menu-btn").onclick = () => {
@@ -64,27 +75,26 @@ document
     };
   });
 
-// -------------------------------------------------Parallax Effect----------------------------------------------
+// --------------- Back to Top btn -------------------------
 
-const parallaxItems = document.querySelectorAll("[data-parallax-item]");
+window.onscroll = function () {
+  scrollFunction();
+};
 
-window.addEventListener("mousemove", function (event) {
-  const mouseX = (event.clientX / window.innerWidth) * 10 - 5;
-  const mouseY = (event.clientY / window.innerHeight) * 10 - 5;
-
-  for (let i = 0, len = parallaxItems.length; i < len; i++) {
-    const x = mouseX - mouseX * 2;
-    const y = mouseY - mouseY * 2;
-    const speed = Number(parallaxItems[i].dataset.parallaxSpeed);
-
-    const translateX = x * speed;
-    const translateY = y * speed;
-
-    parallaxItems[
-      i
-    ].style.transform = `translate3d(${translateX}px, ${translateY}px, 0px)`;
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("backToTop").style.display = "block";
+  } else {
+    document.getElementById("backToTop").style.display = "none";
   }
-});
+}
+
+function scrollToTop() {
+  const scrollToTopBtn = document.documentElement || document.body;
+  scrollToTopBtn.scrollIntoView({
+    behavior: "smooth",
+  });
+}
 
 //form backend start
 
