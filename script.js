@@ -127,29 +127,23 @@ form.addEventListener("submit", async (e) => {
     peopleno,
   });
   alert("Your request is recorded. Our team will contact you soon");
-  // Initialize Email.js with the Public Key
-  emailjs.init("VTKZBdwbBaxvZytYk");
+});
+// Get a reference to the database
+const database2 = firebase.database();
 
-  // Prepare email template parameters
-  const templateParams = {
-    to_email: "teapack534@gmail.com",
-    from_name: "The Coding Impact",
-    subject: "New Order",
-    message: `Place: ${place}\nDate: ${date}\nContact Number: ${contact}\nPeople no: ${peopleNo}`,
-  };
+// Get the form element
+const form2 = document.querySelector("#newsletter");
 
-  // Define your Email.js service ID and template ID
-  const emailjsServiceId = "service_ru36ova";
-  const emailjsTemplateId = "template_mug39bn";
+// Add submit event listener
+form2.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-  // Send email using Email.js
-  emailjs
-    .send(emailjsServiceId, emailjsTemplateId, templateParams)
-    .then((response) => {
-      console.log("Email sent successfully:", response);
-      location.reload();
-    })
-    .catch((error) => {
-      console.error("Error sending email:", error);
-    });
+  // Get input field value
+  const email = document.querySelector("#email").value;
+
+  // Save data to Firebase
+  database2.ref("newsletter").push({
+    email,
+  });
+  alert("You are successfully subscribed.");
 });
