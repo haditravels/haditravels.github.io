@@ -55,15 +55,16 @@
                 <h1>Lets Work Together<span>.</span></h1>
                 <p class="text">
                   Or reach us via:
-                  <a href="mailto:realtorscompany77@gmail.com">
-                    Realtors@gmail.com
+                  <a href="mailto:info@haditravels.com">
+                    info@haditravels.com
                   </a>
                 </p>
               </div>
 
-              <form action="contact.html" method="post" class="contact__form">
+              <form action="contact.html" id="contact" method="post" class="contact__form">
                 <div class="input__wrap">
                   <input
+                  id="firstname"
                     class="contact__input"
                     autocomplete="off"
                     name="First Name"
@@ -76,6 +77,7 @@
 
                 <div class="input__wrap">
                   <input
+                  id="lastname"
                     class="contact__input"
                     autocomplete="off"
                     name="Last Name"
@@ -88,6 +90,7 @@
 
                 <div class="input__wrap w-100">
                   <input
+                  id="email"
                     class="contact__input"
                     autocomplete="off"
                     name="Email"
@@ -100,6 +103,7 @@
 
                 <div class="input__wrap textarea w-100">
                   <textarea
+                  id="message"
                     class="contact__input"
                     name="Message"
                     autocomplete="off"
@@ -154,6 +158,13 @@
         </div>
       </section>
     </main>
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
+    <script src="firebase.js"></script>
 
     <script src="contact.js"></script>
   </body>
