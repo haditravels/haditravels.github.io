@@ -55,9 +55,10 @@
     <section class="footer" data-aos="zoom-out-right">
       <div class="box-container">
         <div class="box">
-          <a href="#"><img class="logo" src="images/logo.png" /></a>
+          <a href="index.html"><img class="logo" src="images/logo.png" /></a>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, atque.
+            "Discover the world with convenience and assurance. Experience
+            seamless travel planning tailored just for you."
           </p>
           <div class="socials">
             <a
@@ -130,103 +131,110 @@
 
     <div class="copywrite"><span>Hadi-Travels</span> | all rights reserved</div>
     <script>
-// ---------------------------------------------Preload--------------------------------------------
+      // ---------------------------------------------Preload--------------------------------------------
 
-// loading will end after document is loaded
+      // loading will end after document is loaded
 
-const preloader = document.querySelector("[data-preaload]");
+      const preloader = document.querySelector("[data-preaload]");
 
-window.addEventListener("load", function () {
-  preloader.classList.add("loaded");
-  document.body.classList.add("loaded");
-});
+      window.addEventListener("load", function () {
+        preloader.classList.add("loaded");
+        document.body.classList.add("loaded");
+      });
 
-let navbar = document.querySelector(".header .navbar");
+      let navbar = document.querySelector(".header .navbar");
 
-document.querySelector("#menu-btn").onclick = () => {
-  navbar.classList.toggle("active");
-};
+      document.querySelector("#menu-btn").onclick = () => {
+        navbar.classList.toggle("active");
+      };
 
-//----------------------------------------------- Hero section slider------------------------------
-let nextDom = document.getElementById("next");
-let prevDom = document.getElementById("prev");
+      //----------------------------------------------- Hero section slider------------------------------
+      let nextDom = document.getElementById("next");
+      let prevDom = document.getElementById("prev");
 
-let sliderDom = document.querySelector(".slider");
-let SliderDom = sliderDom.querySelector(".slider .list");
-let thumbnailBorderDom = document.querySelector(".slider .thumbnail");
-let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
-let timeDom = document.querySelector(".slider .time");
+      let sliderDom = document.querySelector(".slider");
+      let SliderDom = sliderDom.querySelector(".slider .list");
+      let thumbnailBorderDom = document.querySelector(".slider .thumbnail");
+      let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
+      let timeDom = document.querySelector(".slider .time");
 
-thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-let timeRunning = 3000;
-let timeAutoNext = 7000;
+      thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+      let timeRunning = 3000;
+      let timeAutoNext = 7000;
 
-nextDom.onclick = function () {
-  showSlider("next");
-};
+      nextDom.onclick = function () {
+        showSlider("next");
+      };
 
-prevDom.onclick = function () {
-  showSlider("prev");
-};
-let runTimeOut;
-let runNextAuto = setTimeout(() => {
-  next.click();
-}, timeAutoNext);
-function showSlider(type) {
-  let SliderItemsDom = SliderDom.querySelectorAll(".slider .list .item");
-  let thumbnailItemsDom = document.querySelectorAll(".slider .thumbnail .item");
+      prevDom.onclick = function () {
+        showSlider("prev");
+      };
+      let runTimeOut;
+      let runNextAuto = setTimeout(() => {
+        next.click();
+      }, timeAutoNext);
+      function showSlider(type) {
+        let SliderItemsDom = SliderDom.querySelectorAll(".slider .list .item");
+        let thumbnailItemsDom = document.querySelectorAll(
+          ".slider .thumbnail .item"
+        );
 
-  if (type === "next") {
-    SliderDom.appendChild(SliderItemsDom[0]);
-    thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-    sliderDom.classList.add("next");
-  } else {
-    SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
-    thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
-    sliderDom.classList.add("prev");
-  }
-  clearTimeout(runTimeOut);
-  runTimeOut = setTimeout(() => {
-    sliderDom.classList.remove("next");
-    sliderDom.classList.remove("prev");
-  }, timeRunning);
+        if (type === "next") {
+          SliderDom.appendChild(SliderItemsDom[0]);
+          thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+          sliderDom.classList.add("next");
+        } else {
+          SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+          thumbnailBorderDom.prepend(
+            thumbnailItemsDom[thumbnailItemsDom.length - 1]
+          );
+          sliderDom.classList.add("prev");
+        }
+        clearTimeout(runTimeOut);
+        runTimeOut = setTimeout(() => {
+          sliderDom.classList.remove("next");
+          sliderDom.classList.remove("prev");
+        }, timeRunning);
 
-  clearTimeout(runNextAuto);
-  runNextAuto = setTimeout(() => {
-    next.click();
-  }, timeAutoNext);
-}
+        clearTimeout(runNextAuto);
+        runNextAuto = setTimeout(() => {
+          next.click();
+        }, timeAutoNext);
+      }
 
-// ------------------------------------------------about us video slider-------------------------------------
-document
-  .querySelectorAll(".about .video-container .controls .control-btn")
-  .forEach((btn) => {
-    btn.onclick = () => {
-      let src = btn.getAttribute("data-src");
-      document.querySelector(".about .video-container .video").src = src;
-    };
-  });
+      // ------------------------------------------------about us video slider-------------------------------------
+      document
+        .querySelectorAll(".about .video-container .controls .control-btn")
+        .forEach((btn) => {
+          btn.onclick = () => {
+            let src = btn.getAttribute("data-src");
+            document.querySelector(".about .video-container .video").src = src;
+          };
+        });
 
-// --------------- Back to Top btn -------------------------
+      // --------------- Back to Top btn -------------------------
 
-window.onscroll = function () {
-  scrollFunction();
-};
+      window.onscroll = function () {
+        scrollFunction();
+      };
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("backToTop").style.display = "block";
-  } else {
-    document.getElementById("backToTop").style.display = "none";
-  }
-}
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          document.getElementById("backToTop").style.display = "block";
+        } else {
+          document.getElementById("backToTop").style.display = "none";
+        }
+      }
 
-function scrollToTop() {
-  const scrollToTopBtn = document.documentElement || document.body;
-  scrollToTopBtn.scrollIntoView({
-    behavior: "smooth",
-  });
-}
+      function scrollToTop() {
+        const scrollToTopBtn = document.documentElement || document.body;
+        scrollToTopBtn.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
     </script>
     <script src="firebase.js"></script>
     <script>
