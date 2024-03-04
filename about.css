@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 :root {
   --blue-color: #29d9d5;
   --black-color: #111;
@@ -12,6 +19,8 @@
 
 .heading {
   position: relative;
+  -webkit-transform: translateX(-4%);
+  -ms-transform: translateX(-4%);
   transform: translateX(-4%);
   margin-top: 5rem;
 }
@@ -41,23 +50,34 @@
 }
 
 .ceo-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 
   .image {
     height: 60rem;
     overflow: hidden;
     width: 250%;
+    -webkit-transition: all ease-in-out 0.4s;
+    -o-transition: all ease-in-out 0.4s;
     transition: all ease-in-out 0.4s;
 
     &:hover {
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
       transform: scale(1.1);
     }
 
     img {
       width: 100%;
       height: 100%;
+      -o-object-fit: cover;
       object-fit: cover;
     }
   }
@@ -98,15 +118,26 @@
   }
 
   .ceo-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 
     .image {
       height: 60rem;
       overflow: hidden;
       width: 100%;
+      -webkit-transition: all ease-in-out 0.4s;
+      -o-transition: all ease-in-out 0.4s;
       transition: all ease-in-out 0.4s;
     }
   }
