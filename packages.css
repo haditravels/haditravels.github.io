@@ -21,48 +21,46 @@
   border-radius: 1rem;
   background-color: var(--bg-color);
   overflow: hidden;
+}
+.packagesBox:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
 
-  &:hover {
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-  }
+.packagesBox .image {
+  height: 20rem;
+  overflow: hidden;
+  width: 100%;
+}
+.packagesBox .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
 
-  .image {
-    height: 20rem;
-    overflow: hidden;
-    width: 100%;
+.packagesBox .content {
+  padding: 2rem;
+  text-align: center;
+}
 
-    img {
-      width: 100%;
-      height: 100%;
-      -o-object-fit: cover;
-      object-fit: cover;
-    }
-  }
+.packagesBox .content h2 {
+  color: var(--white-color);
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+.packagesBox .content p {
+  padding: 1rem;
+  font-size: 1.4rem;
+  color: var(--light-color);
+  line-height: 2;
+  line-break: auto;
+}
 
-  .content {
-    padding: 2rem;
-    text-align: center;
-
-    h2 {
-      color: var(--white-color);
-      font-size: 2rem;
-      margin-top: 0.5rem;
-    }
-    p {
-      padding: 1rem;
-      font-size: 1.4rem;
-      color: var(--light-color);
-      line-height: 2;
-      line-break: auto;
-    }
-
-    h4 {
-      font-size: 1.7rem;
-      color: var(--blue-color);
-    }
-  }
+.packagesBox .content h4 {
+  font-size: 1.7rem;
+  color: var(--blue-color);
 }
 
 .package-details {
@@ -76,16 +74,16 @@
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-bottom: 0.5rem;
+}
 
-  .package-name h2 {
-    font-size: 2.5rem;
-    margin-left: 2rem;
-  }
+.package-details .package-name h2 {
+  font-size: 2.5rem;
+  margin-left: 2rem;
+}
 
-  .package-price h4 {
-    font-size: 2rem;
-    margin-right: 2rem;
-  }
+.package-details .package-price h4 {
+  font-size: 2rem;
+  margin-right: 2rem;
 }
 
 @media (max-width: 768px) {
