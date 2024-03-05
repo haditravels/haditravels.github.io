@@ -1028,6 +1028,7 @@ a-logo {
 
 .footer .box .logo {
   padding-bottom: 1rem;
+  width: 40%;
 }
 
 .footer .box h3 {
@@ -1051,15 +1052,8 @@ a-logo {
   width: 4.5rem;
   line-height: 4rem;
   font-size: 2rem;
-  /* border-radius: 50%; */
-  /* border: var(--border); */
-  /* color: var(--blue-color); */
   margin-right: 0.5rem;
   text-align: center;
-}
-.socials a:hover {
-  background-color: var(--blue-color);
-  color: var(--black-color);
 }
 
 .links {
