@@ -1154,6 +1154,7 @@ form .newsletter {
 }
 
 #instagrmBar {
+  background: transparent;
   position: fixed;
   bottom: 89px;
   right: 27px;
@@ -1169,7 +1170,7 @@ form .newsletter {
 }
 #instagrmBar i {
   font-size: 40px;
-  color: black;
+  color: #64cd8a;
 }
 
 /* ----------------------------------------------------------Breakpoints------------------------------------- */
