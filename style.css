@@ -204,6 +204,10 @@ body {
 
 /* ----------------------------------------------------------Header------------------------------------- */
 
+a-logo {
+  padding-right: 17rem;
+}
+
 .logo {
   width: 75%;
 }
@@ -1292,6 +1296,9 @@ form .newsletter {
 @media (max-width: 450px) {
   html {
     font-size: 50%;
+  }
+  .navbar.active {
+    transform: translateX(-35rem);
   }
 
   .logo {
