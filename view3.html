@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Item ID from Cache</title>
+     <!-- Include the Firebase JavaScript SDK -->
+     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
+</head>
+<body>
+    <div id="menu"></div>
+    <div id="itemIdDisplay"></div>
+
+    <script src="firebase.js"></script>
+    <script>
+        firebase.initializeApp(firebaseConfig);
+
+        // Get a reference to the database
+        var database = firebase.database();
+
+        // Fetch menu data from Firebase
+        var menuRef = database.ref("umrah");
+        menuRef.on("value", function (snapshot) {
+            var menuData = snapshot.val();
+
+            // Retrieve itemId from localStorage
+            var itemId = localStorage.getItem('itemName');
+
+            // Display menu data on the web page
+            var menuContainer = document.getElementById("menu");
+            menuContainer.innerHTML = "";
+
+            for (var key in menuData) {
+                if (menuData.hasOwnProperty(key)) {
+                    var menuItem = menuData[key];
+                    if (menuItem.name === itemId) { // Check if item ID matches
+                        var menuItemElement = document.createElement("div");
+                        menuItemElement.innerHTML = `
+                            <div class="packagesBox">
+                                <div class="image">
+                                    <img src="${menuItem.image}" alt="${menuItem.name}" class="menu-image">
+                                </div>
+                                <div class="content">
+                                    <div class="package-details">    
+                                        <div class="package-name">    
+                                            <h2>${menuItem.name}</h2>
+                                        </div>
+                                        <div class="package-price">        
+                                            <h4>Rs ${menuItem.price}</h4>
+                                        </div>    
+                                    </div>    
+                                    <p>${menuItem.description}</p>
+                                    <p>${menuItem.descriptionnext2}</p>
+                                </div>    
+                            </div>`;
+
+                        menuContainer.appendChild(menuItemElement);
+                    }
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>
