@@ -202,6 +202,43 @@ body {
   }
 }
 
+/* ------------------------------------------------------nav-banner------------------------------------- */
+
+/* .nav-banner {
+  width: 100%;
+  height: 5rem;
+  background-color: var(--blue-color);
+  /* z-index: 500; */
+/* display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+
+/* .nav-banner .content {
+  padding: 0 2rem;
+  transform: translateY(2rem);
+  display: none;
+}
+.nav-banner .content i {
+  font-size: 2.2rem;
+  margin-left: 1.2rem;
+}
+.nav-banner .content a {
+  color: var(--black-color);
+  font-size: 1.5rem;
+}
+
+.banner-socials i {
+  font-size: 3.5rem;
+  cursor: pointer;
+  color: var(--black-color);
+  margin-left: 1rem;
+}
+
+.banner-call {
+  display: none;
+} */
+
 /* ----------------------------------------------------------Header------------------------------------- */
 
 a-logo {
@@ -221,6 +258,8 @@ a-logo {
 
 .header {
   position: fixed;
+  /* overflow: hidden; */
+  /* height: 5rem; */
   top: 0;
   left: 0;
   right: 0;
@@ -254,6 +293,95 @@ a-logo {
 .navbar {
   width: 100%;
   margin-left: 35rem;
+}
+
+/* ---------------------------------Right sidebar------------------- */
+
+.nav-right i {
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transform: translate(35px, 4px);
+}
+
+.header-right-bar {
+  width: 355px;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  right: -355px;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding: 60px 25px 20px 30px;
+  z-index: 2;
+  background: linear-gradient(42deg, #104860 0.01%, #0c3a60 100%);
+}
+.close_rightsidebar {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(42deg, #226e8e 0.01%, #308dd9 100%);
+  padding: 10px 12px 10px 12px;
+  margin-bottom: -15px;
+  border-radius: 0.25em;
+  border: var(--border);
+  color: #fff;
+  cursor: pointer;
+  transform: translateY(-24rem);
+}
+.right-side-text {
+  margin-top: 50px;
+  color: var(--white-color);
+  font-size: 2rem;
+}
+.header-right-bar .btn-hover1 {
+  padding: 8px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 93px;
+}
+.header-right-bar .logo {
+  /* margin-bottom: 3rem; */
+}
+.right-side-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  color: var(--white-color);
+  font-size: 1.7rem;
+}
+.right-side-links {
+  color: #2a2827;
+  color: var(--white-color);
+  font-size: 1.6rem;
+}
+.right-side-links:hover {
+  color: #f57c48;
+}
+.right-side-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.8rem;
+  color: var(--white-color);
+  cursor: pointer;
+}
+.right-sub-container {
+  margin-bottom: 13px;
+}
+.right-container-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 13px;
+  /* font-size: 25rem; */
+}
+.fa-brands {
+  font-size: 22px;
 }
 
 /* ----------------------------------------------------------Home------------------------------------- */
@@ -953,6 +1081,35 @@ a-logo {
   font-size: 2rem;
 }
 
+/* ------------------------------------------------------- Airlines ------------------------------------- */
+.logos {
+  height: 15rem;
+  background-color: var(--blue-color);
+  overflow: hidden;
+  padding: 60px 0;
+  white-space: nowrap;
+}
+
+.logos-slide {
+  animation: 20s slide infinite linear;
+  display: inline-block;
+}
+
+.logos-slide img {
+  transform: translateY(-4rem);
+  height: 80px;
+  margin: 0 40px;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
 /* ----------------------------------------------------------Banner------------------------------------- */
 
 .banner {
@@ -1190,7 +1347,7 @@ form .newsletter {
 @media (max-width: 768px) {
   .header .navbar {
     position: absolute;
-    top: 99%;
+    top: 99% !important;
     right: 0;
     left: 0;
     background: var(--bg-color);
@@ -1206,6 +1363,10 @@ form .newsletter {
     font-size: 2rem;
     display: block;
   }
+
+  /* .nav-banner .content {
+    display: none;
+  } */
 
   .home {
     margin-top: 10rem;
@@ -1296,11 +1457,36 @@ form .newsletter {
     transform: translateX(-35rem);
   }
 
+  .header-right-bar {
+    display: none;
+  }
+
   .logo {
     -webkit-transform: translateX(12rem);
     -ms-transform: translateX(12rem);
     transform: translateX(12rem);
     width: 38%;
+  }
+
+  .banner-socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+  }
+
+  .banner-call {
+    display: block;
+    background-color: black;
+  }
+
+  .banner-call {
+    height: 4rem;
+    padding-bottom: 3rem;
+    /* width: 3rem; */
+  }
+  .banner-call a {
+    padding-bottom: 52rem;
   }
 
   .home {

@@ -65,6 +65,21 @@ function showSlider(type) {
   }, timeAutoNext);
 }
 
+// --------------------------------------------------Sidebar------------------------------------------
+
+function rightCloseNav() {
+  const rightSide = document.getElementById("right-side");
+  if (rightSide) {
+    rightSide.style.right = "-355px";
+  }
+}
+function rightOpenNav() {
+  const rightSide = document.getElementById("right-side");
+  if (rightSide) {
+    rightSide.style.right = "0";
+  }
+}
+
 // --------------- Back to Top btn -------------------------
 
 window.onscroll = function () {
