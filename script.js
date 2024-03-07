@@ -122,7 +122,7 @@ form.addEventListener("submit", async (e) => {
   const place = document.querySelector("#place").value;
   const date = document.querySelector("#date").value;
   const contact = document.querySelector("#contact").value;
-  const peopleNo = document.querySelector("#peopleno").value;
+  const peopleno = document.querySelector("#peopleno").value;
 
   // Save data to Firebase
   database.ref("orders").push({

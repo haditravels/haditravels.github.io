@@ -97,7 +97,8 @@
     <label for="itemImageInput">Select Package image:</label>
     <input type="file" id="itemImageInput3" accept="image/*">
   <input type="text" id="itemDescription3" placeholder="Enter Package description">
-  <input type="text" id="itemDescriptionnext3" placeholder="Enter Package description for next page">
+  <textarea id="itemDescriptionnext3" placeholder="Enter Package description for next page" rows="4" cols="50"></textarea>
+
   <button id="saveItemButton3" onclick="saveItem3()" disabled>Save Item</button>
 
   <h2>Remove Existing  international Package </h2>
@@ -105,7 +106,27 @@
   <button id="removeItemButton3" onclick="removeItem3()" disabled>Remove Item</button>
 
   <div id="messageDiv3"></div>
+  <h2>Add new Visa</h2>
+  <input type="text" id="itemName5" placeholder="Enter country name">
+    <label for="itemImageInput">Select Package image:</label>
+    <input type="file" id="itemImageInput5" accept="image/*">
+  <input type="text" id="itemDescription5" placeholder="Enter visa description">
+  <button id="saveItemButton5" onclick="saveItem5()" disabled>Save Item</button>
 
+  <h2>Remove Existing Visa </h2>
+  <input type="text" id="itemIdToRemove5" placeholder="Enter country name to remove">
+  <button id="removeItemButton5" onclick="removeItem5()" disabled>Remove Item</button>
+
+  <h2>Add new Vlogs</h2>
+  <input type="text" id="itemName4" placeholder="Enter vlog name">
+    <label for="itemImageInput">Select vlog image:</label>
+    <input type="file" id="itemImageInput4" accept="image/*">
+  <input type="text" id="itemlink" placeholder="Enter vlog link">
+  <button id="saveItemButton4" onclick="saveItem4()" disabled>Save Item</button>
+
+  <h2>Remove Existing Vlog </h2>
+  <input type="text" id="itemIdToRemove4" placeholder="Enter vlog name to remove">
+  <button id="removeItemButton4" onclick="removeItem4()" disabled>Remove Item</button>
   <script>
     var firebaseConfig = {
       // Your Firebase configuration here
@@ -157,6 +178,10 @@
     var saveItemButton3 = document.getElementById("saveItemButton3");
     var removeItemButton3 = document.getElementById("removeItemButton3");
     var clickHereLinks = document.querySelectorAll(".clickHereLink");
+    var saveItemButton4 = document.getElementById("saveItemButton4");
+    var removeItemButton4 = document.getElementById("removeItemButton4");
+    var saveItemButton5 = document.getElementById("saveItemButton5");
+    var removeItemButton5 = document.getElementById("removeItemButton5");
 
     saveItemButton.disabled = false;
     removeItemButton.disabled = false;
@@ -164,6 +189,10 @@
     removeItemButton2.disabled = false;
     saveItemButton3.disabled = false;
     removeItemButton3.disabled = false;
+    saveItemButton4.disabled = false;
+    removeItemButton4.disabled = false;
+    saveItemButton5.disabled = false;
+    removeItemButton5.disabled = false;
 
 
     // Enable click here links
@@ -441,7 +470,183 @@
         }
       });
     }
-    
+    var database = firebase.database();
+    var itemsRef4 = database.ref("vlogs");
+
+    function showMessage(message, isError) {
+      var messageDiv = document.getElementById("messageDiv3");
+      messageDiv.innerHTML = message;
+      messageDiv.style.color = isError ? "red" : "green";
+    }
+    function saveItem4() {
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      var saveItemButton = document.getElementById("saveItemButton4");
+      saveItemButton.disabled = true;
+
+      var itemName = document.getElementById("itemName4").value;
+      var itemImageInput = document.getElementById("itemImageInput4");
+      var itemDescription = document.getElementById("itemlink").value;
+      var itemId = itemName;
+
+      var item = {
+        image: "", // You will need to upload the image to a storage service and get the URL
+        name: itemName,
+        price: itemPrice,
+        description: itemDescription,
+        descriptionnext: itemDescriptionnext
+      };
+
+      // Upload the image to a storage service and get the URL
+      var file = itemImageInput.files[0];
+      var storageRef = firebase.storage().ref('itemImages/' + file.name);
+      var task = storageRef.put(file);
+
+      task.on('state_changed',
+        function progress(snapshot) {
+          var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log('Upload is ' + percentage + '% done');
+        },
+        function error(err) {
+          console.error("Error uploading image: ", err);
+          showMessage("Error uploading image. Please try again.", true);
+        },
+        function complete() {
+          task.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+            item.image = downloadURL;
+            // Save the item with the image URL
+            itemsRef4.child(itemId).set(item)
+              .then(function() {
+                console.log("Item saved successfully!");
+                showMessage("Item saved successfully!", false);
+              })
+              .catch(function(error) {
+                console.error("Error saving item: ", error);
+                showMessage("Error saving item. Please try again.", true);
+              });
+
+            saveItemButton.disabled = false;
+          });
+        }
+      );
+    } else {
+      console.error("User not logged in. Please log in to add items.");
+    }
+  });
+}
+
+    function removeItem4() {
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          var removeItemButton = document.getElementById("removeItemButton");
+          removeItemButton.disabled = true;
+
+          var itemIdToRemove = document.getElementById("itemIdToRemove").value;
+
+          itemsRef4.child(itemIdToRemove).remove()
+            .then(function() {
+              console.log("Item removed successfully!");
+              showMessage("Item removed successfully!", false);
+            })
+            .catch(function(error) {
+              console.error("Error removing item: ", error);
+              showMessage("Error removing item. Please try again.", true);
+            });
+
+          removeItemButton.disabled = false;
+        } else {
+          console.error("User not logged in. Please log in to remove items.");
+        }
+      });
+    }
+    var database = firebase.database();
+    var itemsRef5 = database.ref("visa");
+
+    function showMessage(message, isError) {
+      var messageDiv = document.getElementById("messageDiv3");
+      messageDiv.innerHTML = message;
+      messageDiv.style.color = isError ? "red" : "green";
+    }
+    function saveItem5() {
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      var saveItemButton = document.getElementById("saveItemButton5");
+      saveItemButton.disabled = true;
+
+      var itemName = document.getElementById("itemName5").value;
+      var itemImageInput = document.getElementById("itemImageInput5");
+      var itemDescription = document.getElementById("itemDescription5").value;
+      var itemId = itemName;
+
+      var item = {
+        image: "", // You will need to upload the image to a storage service and get the URL
+        name: itemName,
+        price: itemPrice,
+        description: itemDescription
+      };
+
+      // Upload the image to a storage service and get the URL
+      var file = itemImageInput.files[0];
+      var storageRef = firebase.storage().ref('itemImages/' + file.name);
+      var task = storageRef.put(file);
+
+      task.on('state_changed',
+        function progress(snapshot) {
+          var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log('Upload is ' + percentage + '% done');
+        },
+        function error(err) {
+          console.error("Error uploading image: ", err);
+          showMessage("Error uploading image. Please try again.", true);
+        },
+        function complete() {
+          task.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+            item.image = downloadURL;
+            // Save the item with the image URL
+            itemsRef5.child(itemId).set(item)
+              .then(function() {
+                console.log("Item saved successfully!");
+                showMessage("Item saved successfully!", false);
+              })
+              .catch(function(error) {
+                console.error("Error saving item: ", error);
+                showMessage("Error saving item. Please try again.", true);
+              });
+
+            saveItemButton.disabled = false;
+          });
+        }
+      );
+    } else {
+      console.error("User not logged in. Please log in to add items.");
+    }
+  });
+}
+
+    function removeItem5() {
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          var removeItemButton = document.getElementById("removeItemButton5");
+          removeItemButton.disabled = true;
+
+          var itemIdToRemove = document.getElementById("itemIdToRemove5").value;
+
+          itemsRef5.child(itemIdToRemove).remove()
+            .then(function() {
+              console.log("Item removed successfully!");
+              showMessage("Item removed successfully!", false);
+            })
+            .catch(function(error) {
+              console.error("Error removing item: ", error);
+              showMessage("Error removing item. Please try again.", true);
+            });
+
+          removeItemButton.disabled = false;
+        } else {
+          console.error("User not logged in. Please log in to remove items.");
+        }
+      });
+    }
   </script>
 </body>
 </html>
