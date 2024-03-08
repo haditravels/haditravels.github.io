@@ -327,7 +327,7 @@ a-logo {
   border: var(--border);
   color: #fff;
   cursor: pointer;
-  transform: translateY(-24rem);
+  transform: translateY(-12rem);
 }
 .right-side-text {
   margin-top: 50px;

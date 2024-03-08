@@ -25,16 +25,18 @@
 
     <div class="header">
       <div id="menu-btn"><i class="fa-solid fa-bars"></i></div>
-      <a href="index.html"><img class="logo" src="images/logo.png" /></a>
+      <a class="a-logo" href="index.html"
+        ><img class="logo" src="images/finalogo.png"
+      /></a>
 
       <nav class="navbar">
         <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="#">Packages</a>
-        <a href="contact-page2/contact.html">Contact Us</a>
+        <a href="about.html" target="_blank">About Us</a>
+        <a href="packages.html" target="_blank">Packages</a>
+        <a href="contact-page2/contact.html" target="_blank">Contact Us</a>
       </nav>
 
-      <a href="#" class="btn">Book Now</a>
+      <a href="tel:+923007030303" class="btn">Book Now</a>
     </div>
 
     <!--------------------------------------------------------- Packages ------------------------------------------->
@@ -80,29 +82,30 @@
     <section class="footer" data-aos="zoom-out-right">
       <div class="box-container">
         <div class="box">
-          <a href="index.html"><img class="logo" src="images/logo.png" /></a>
+          <a href="#"
+            ><img class="logo footer-logo" src="images/finalogo.png"
+          /></a>
           <p>
             "Discover the world with convenience and assurance. Experience
             seamless travel planning tailored just for you."
           </p>
           <div class="socials">
-            <a
-              href="https://www.facebook.com/AlHadiAviation?mibextid=kFxxJD"
-              class="fa-brands fa-facebook"
-            ></a>
+            <a href="https://www.facebook.com/AlHadiAviation?mibextid=kFxxJD"
+              ><img class="socials-icons" src="images/facebook.png"
+            /></a>
             <a
               href="https://www.instagram.com/hadi_travels?fbclid=IwAR1dMkVbsVUQThg-0PpeFLsAEIJ1LfWVqTj6vBcc7tlwbiq-HwDSWckv9OI"
-              class="fa-brands fa-instagram"
-            ></a>
-            <a href="tel:+923007030303" class="fa-brands fa-whatsapp"></a>
-            <a
-              href="mailto:Alhadiaviation2012@gmail.com"
-              class="fa-regular fa-envelope"
-            ></a>
-            <a
-              href="https://maps.app.goo.gl/NDRAbCDvNXHKxT4E8"
-              class="fa-solid fa-map"
-            ></a>
+              ><img class="socials-icons" src="images/instagram.png"
+            /></a>
+            <a href="https://wa.me/+923007030303"
+              ><img class="socials-icons" src="images/whatsaap.png"
+            /></a>
+            <a href="mailto:info@haditravels.com"
+              ><img class="socials-icons" src="images/mail.png"
+            /></a>
+            <a href="https://maps.app.goo.gl/NDRAbCDvNXHKxT4E8"
+              ><img class="socials-icons" src="images/maps.png"
+            /></a>
           </div>
         </div>
 
@@ -131,10 +134,8 @@
         <div class="box contact-info">
           <h3>Contact Info</h3>
           <p><i class="fa-solid fa-map-location-dot"></i>Pakistan, Karachi</p>
-          <p><i class="fa-solid fa-phone"></i>+92-300-7030303</p>
-          <p>
-            <i class="fa-solid fa-envelope"></i>Alhadiaviation2012@gmail.com
-          </p>
+          <p><i class="fa-solid fa-phone"></i>02133378466</p>
+          <p><i class="fa-solid fa-envelope"></i>info@haditravels.com</p>
           <p><i class="fa-solid fa-clock"></i>10:00 am - 10:00 pm</p>
         </div>
 
@@ -144,6 +145,7 @@
           <form action="" id="newsletter">
             <input
               type="email"
+              id="email"
               name=""
               placeholder="Drop your email"
               class="newsletter"
@@ -155,11 +157,13 @@
     </section>
 
     <div class="copywrite"><span>Hadi-Travels</span> | all rights reserved</div>
-    <button class="btn-hover2 instagrmBar" id="instagrmBar">
+    <!-- ------------backtotop ------------------>
+    <button class="instagrmBar" id="instagrmBar">
       <a href="https://wa.me/+923007030303"
-        ><i class="fa-brands fa-whatsapp"></i
-      ></a>
+        ><img class="socials-icons" src="images/whatsaap.png"
+      /></a>
     </button>
+
     <script>
       function redirectToUrl(itemName) {
         // Save itemName to localStorage
@@ -318,13 +322,13 @@
             <div class="content">
                 <div class="package-details">    
                     <div class="package-name">    
-                        <h2>${menuItem.name}</h2>
+                        <h2 class="multiline-ellipsis-2">${menuItem.name}</h2>
                     </div>
                     <div class="package-price">        
-                        <h4>Rs ${menuItem.price}</h4>
+                        <h4 class="multiline-ellipsis-3">Rs ${menuItem.price}</h4>
                     </div>    
                 </div>    
-                <p>${menuItem.description}</p>
+                <p class="multiline-ellipsis">${menuItem.description}</p>
             </div>    
         </div> </button>
 `;
@@ -357,13 +361,13 @@
             <div class="content">
                 <div class="package-details">    
                     <div class="package-name">    
-                        <h2>${menuItem.name}</h2>
+                        <h2 class="multiline-ellipsis-2">${menuItem.name}</h2>
                     </div>
                     <div class="package-price">        
-                        <h4>Rs ${menuItem.price}</h4>
+                        <h4 class="multiline-ellipsis-3">Rs ${menuItem.price}</h4>
                     </div>    
                 </div>    
-                <p>${menuItem.description}</p>
+                <p class="multiline-ellipsis">${menuItem.description}</p>
             </div>    
         </div> </button>
 `;
@@ -396,13 +400,13 @@
             <div class="content">
                 <div class="package-details">    
                     <div class="package-name">    
-                        <h2>${menuItem.name}</h2>
+                        <h2 class="multiline-ellipsis-2">${menuItem.name}</h2>
                     </div>
                     <div class="package-price">        
-                        <h4>Rs ${menuItem.price}</h4>
+                        <h4 class="multiline-ellipsis-3">Rs ${menuItem.price}</h4>
                     </div>    
                 </div>    
-                <p>${menuItem.description}</p>
+                <p class="multiline-ellipsis">${menuItem.description}</p>
             </div>    
         </div> </button>
 `;

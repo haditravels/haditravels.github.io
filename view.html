@@ -22,15 +22,14 @@
     />
   </head>
   <body>
-    <!-- ------------------------------------ Header --------------------------- -->
     <div class="header">
       <div id="menu-btn"><i class="fa-solid fa-bars"></i></div>
-      <a class="a-logo" href="#"
+      <a class="a-logo" href="index.html"
         ><img class="logo" src="images/finalogo.png"
       /></a>
 
       <nav class="navbar">
-        <a href="#">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html" target="_blank">About Us</a>
         <a href="packages.html" target="_blank">Packages</a>
         <a href="contact-page2/contact.html" target="_blank">Contact Us</a>
@@ -50,6 +49,9 @@
     <section class="packages-container">
       <div id="menu"></div>
       <div id="itemIdDisplay"></div>
+      <div class="button">
+        <a href="https://wa.me/+923007030303" class="btn">Message Now</a>
+      </div>
     </section>
 
     <!--------------------------------------------------------- Footer ------------------------------------------->
@@ -133,6 +135,13 @@
 
     <div class="copywrite"><span>Hadi-Travels</span> | all rights reserved</div>
 
+    <!-- ------------backtotop ------------------>
+    <button class="instagrmBar" id="instagrmBar">
+      <a href="https://wa.me/+923007030303"
+        ><img class="socials-icons" src="images/whatsaap.png"
+      /></a>
+    </button>
+
     <!-- backend -->
     <script src="firebase.js"></script>
     <script>
@@ -171,10 +180,22 @@
                                         </div>
                                         <div class="package-price">        
                                             <h4>Rs ${menuItem.price}</h4>
-                                        </div>    
-                                    </div>    
-                                    <p>${menuItem.description}</p>
-                                    <p>${menuItem.descriptionnext}</p>
+                                        </div> 
+                                    </div>
+                                    <div class="package-des">
+                                      <div class="heading">
+                                        <span class="package-des-title">Package Description</span>
+                                        <div class="hr">
+                                          <hr class="footer-hr des-hr" />
+                                        </div>
+                                      </div>   
+                                        <div class="package-des1">
+                                          <p class="des-1">${menuItem.description}</p>
+                                        </div>
+                                        <div class="package-des2">
+                                          <p class="des-2">${menuItem.descriptionnext}</p>
+                                        </div> 
+                                    </div>      
                                 </div>    
                             </div>`;
 

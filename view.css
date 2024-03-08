@@ -1,14 +1,58 @@
-.menu-image {
-  width: 45rem;
-  margin-top: 10rem;
+:root {
+  --blue-color: #29d9d5;
+  --black-color: #111;
+  --white-color: #fff;
+  --light-color: #aaa;
+  --bg-color: #222;
+  --black-bg: rgba(17, 17, 17, 0.7);
+  --border: 0.2rem solid #29d9d5;
 }
 
 .packages .heading {
   margin-top: 20rem;
 }
 
+.menu-image {
+  width: 45rem;
+  /* margin-top: rem; */
+}
+
 .image {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.package-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10rem;
+  margin-top: 5rem;
+}
+
+.package-price {
+  color: var(--blue-color);
+  font-size: 3rem;
+}
+
+.package-name {
+  color: white;
+  font-size: 3rem;
+}
+
+.package-des .heading {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.des-hr {
+  width: 16rem !important;
+  margin-top: 1.2rem !important;
+}
+
+.package-des p {
+  color: var(--white-color);
+  font-size: 2rem !important;
+  /* padding: 1rem 12rem !important; */
 }
