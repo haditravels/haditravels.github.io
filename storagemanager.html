@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Firebase Storage Images</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    img {
+      max-width: 300px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 14px;
+      color: #666;
+      margin: 0;
+    }
+    .delete-icon {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script>
+  <script>
+  // Initialize Firebase
+var config = {
+    apiKey: "AIzaSyDJvblyvAtYxmkv9aff87ym7eVHCVLfBh8",
+    authDomain: "hadi-travels.firebaseapp.com",
+    projectId: "hadi-travels",
+    storageBucket: "hadi-travels.appspot.com",
+    messagingSenderId: "1015878757130",
+    appId: "1:1015878757130:web:c7034501c57cbc3c4de8f3",
+    measurementId: "G-PWP2W7Y68D"
+  };
+  firebase.initializeApp(config);
+
+
+var storage = firebase.storage();
+var imagesRef = storage.ref('itemImages');
+
+
+imagesRef.listAll().then(function (result) {
+  result.items.forEach(function (imageRef, index) {
+
+    imageRef.getDownloadURL().then(function (url) {
+
+      var img = document.createElement('img');
+      img.src = url;
+
+
+      var imageContainer = document.createElement('div');
+      imageContainer.className = 'image-container';
+
+      imageContainer.appendChild(img);
+
+      var deleteIcon = document.createElement('span');
+      deleteIcon.className = 'delete-icon';
+      deleteIcon.innerHTML = '❌';
+      deleteIcon.onclick = function () {
+        deleteImage(imageRef, imageContainer);
+      };
+
+      imageContainer.appendChild(deleteIcon);
+
+      document.body.appendChild(imageContainer);
+    }).catch(function (error) {
+
+      console.error('Error getting download URL:', error);
+    });
+  });
+}).catch(function (error) {
+
+  console.error('Error listing items:', error);
+});
+
+function deleteImage(imageRef, imageContainer) {
+  
+  imageRef.delete().then(function () {
+   
+    console.log('Image deleted successfully');
+
+    imageContainer.parentNode.removeChild(imageContainer);
+  }).catch(function (error) {
+    console.error('Error deleting image:', error);
+  });
+}
+
+
+
+  </script>
+</body>
+</html>
