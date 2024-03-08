@@ -42,27 +42,25 @@ var config = {
   };
   firebase.initializeApp(config);
 
-// Create a reference to a specific directory in the storage
+
 var storage = firebase.storage();
 var imagesRef = storage.ref('itemImages');
 
-// List all items in the specified directory
+
 imagesRef.listAll().then(function (result) {
   result.items.forEach(function (imageRef, index) {
-    // Get the download URL for the image
+
     imageRef.getDownloadURL().then(function (url) {
-      // Create an img element to display the image
+
       var img = document.createElement('img');
       img.src = url;
 
-      // Create a div to contain the image and delete icon
+
       var imageContainer = document.createElement('div');
       imageContainer.className = 'image-container';
 
-      // Append the image to the container
       imageContainer.appendChild(img);
 
-      // Create a delete icon for this image
       var deleteIcon = document.createElement('span');
       deleteIcon.className = 'delete-icon';
       deleteIcon.innerHTML = '❌';
@@ -70,31 +68,27 @@ imagesRef.listAll().then(function (result) {
         deleteImage(imageRef, imageContainer);
       };
 
-      // Append the delete icon to the container
       imageContainer.appendChild(deleteIcon);
 
-      // Append the image container to the body
       document.body.appendChild(imageContainer);
     }).catch(function (error) {
-      // Handle any errors getting the download URL
+
       console.error('Error getting download URL:', error);
     });
   });
 }).catch(function (error) {
-  // Handle any errors listing the items
+
   console.error('Error listing items:', error);
 });
 
-// Function to delete an image and its container from the DOM
 function deleteImage(imageRef, imageContainer) {
-  // Delete the image from storage
+  
   imageRef.delete().then(function () {
-    // Image deleted successfully
+   
     console.log('Image deleted successfully');
-    // Remove the image container from the DOM
+
     imageContainer.parentNode.removeChild(imageContainer);
   }).catch(function (error) {
-    // Handle any errors
     console.error('Error deleting image:', error);
   });
 }
