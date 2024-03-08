@@ -1,0 +1,19 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": "auth != null && auth.uid === 'qkPcZcHGCeRUOnAVeiWWqD1CO6a2'",
+    "$node_id": {
+      ".read": true,
+      ".write": "auth != null && auth.uid === 'qkPcZcHGCeRUOnAVeiWWqD1CO6a2'"
+    },
+    "orders": {
+      ".write": true
+    },
+    "newsletter": {
+      ".write": true
+    },
+    "messages": {
+      ".write": true
+    }
+  }
+}
