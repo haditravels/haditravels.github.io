@@ -1,0 +1,14 @@
+.menu-image {
+  width: 45rem;
+  margin-top: 10rem;
+}
+
+.packages .heading {
+  margin-top: 20rem;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

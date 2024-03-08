@@ -48,21 +48,21 @@
       <div class="packages-box-container">
         <div id="menu"></div>
       </div>
-    </section><br>
+    </section>
+    <br />
     <section class="packages">
       <div class="heading">
-      
         <h1>INTERNATIONAL PACKAGES</h1>
       </div>
 
       <div class="packages-box-container">
         <div id="menu2"></div>
       </div>
-    </section><br>
-    
+    </section>
+    <br />
+
     <section class="packages">
       <div class="heading">
-  
         <h1>UMRAH AND HAJJ</h1>
       </div>
 
@@ -70,6 +70,10 @@
         <div id="menu3"></div>
       </div>
     </section>
+
+    <div class="hr">
+      <hr class="footer-hr" />
+    </div>
 
     <!--------------------------------------------------------- Footer ------------------------------------------->
 
@@ -158,26 +162,26 @@
     </button>
     <script>
       function redirectToUrl(itemName) {
-    // Save itemName to localStorage
-    localStorage.setItem('itemName', itemName);
-    
-    var url = "/view.html";
-    window.location.href = url;
-}
-function redirectToUrl2(itemName) {
-    // Save itemName to localStorage
-    localStorage.setItem('itemName', itemName);
-    
-    var url = "/view2.html";
-    window.location.href = url;
-}
-function redirectToUrl3(itemName) {
-    // Save itemName to localStorage
-    localStorage.setItem('itemName', itemName);
-    
-    var url = "/view3.html";
-    window.location.href = url;
-}
+        // Save itemName to localStorage
+        localStorage.setItem("itemName", itemName);
+
+        var url = "/view.html";
+        window.location.href = url;
+      }
+      function redirectToUrl2(itemName) {
+        // Save itemName to localStorage
+        localStorage.setItem("itemName", itemName);
+
+        var url = "/view2.html";
+        window.location.href = url;
+      }
+      function redirectToUrl3(itemName) {
+        // Save itemName to localStorage
+        localStorage.setItem("itemName", itemName);
+
+        var url = "/view3.html";
+        window.location.href = url;
+      }
 
       // ---------------------------------------------Preload--------------------------------------------
 
@@ -306,7 +310,7 @@ function redirectToUrl3(itemName) {
             var menuItemElement = document.createElement("div");
             menuItemElement.innerHTML = `
             
-            <button onclick="redirectToUrl('${menuItem.name}')">
+            <button class="btn-package" onclick="redirectToUrl('${menuItem.name}')">
         <div class="packagesBox">
             <div class="image">
                 <img src="${menuItem.image}" alt="${menuItem.name}" class="menu-image">
@@ -329,8 +333,8 @@ function redirectToUrl3(itemName) {
           }
         }
       });
-        // Fetch menu data from Firebase
-        var menuRef = database.ref("international");
+      // Fetch menu data from Firebase
+      var menuRef = database.ref("international");
       menuRef.on("value", function (snapshot) {
         var menuData = snapshot.val();
 
@@ -345,7 +349,7 @@ function redirectToUrl3(itemName) {
             menuItemElement.innerHTML = `
             
 
-            <button onclick="redirectToUrl2('${menuItem.name}')">
+            <button class="btn-package" onclick="redirectToUrl2('${menuItem.name}')">
         <div class="packagesBox">
             <div class="image">
                 <img src="${menuItem.image}" alt="${menuItem.name}" class="menu-image">
@@ -368,8 +372,8 @@ function redirectToUrl3(itemName) {
           }
         }
       });
-        // Fetch menu data from Firebase
-        var menuRef = database.ref("umrah");
+      // Fetch menu data from Firebase
+      var menuRef = database.ref("umrah");
       menuRef.on("value", function (snapshot) {
         var menuData = snapshot.val();
 
@@ -384,7 +388,7 @@ function redirectToUrl3(itemName) {
             menuItemElement.innerHTML = `
             
 
-            <button onclick="redirectToUrl3('${menuItem.name}')">
+            <button class="btn-package" onclick="redirectToUrl3('${menuItem.name}')">
         <div class="packagesBox">
             <div class="image">
                 <img src="${menuItem.image}" alt="${menuItem.name}" class="menu-image">
