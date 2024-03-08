@@ -11,6 +11,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="view.css" />
     <!-- <link rel="stylesheet" href="packages.css" /> -->
     <link rel="stylesheet" href="style.css" />
@@ -46,8 +50,8 @@
 
     <!-- package -->
 
+    <div id="menu"></div>
     <section class="packages-box-container">
-      <div id="menu"></div>
       <div class="button">
         <a href="https://wa.me/+923007030303" class="btn">Message Now</a>
       </div>
@@ -280,31 +284,41 @@
               menuItemElement.innerHTML = `
                             <div class="packagesBox">
                                 <div class="image">
-                                    <img src="${menuItem.image}" alt="${menuItem.name}" class="menu-image">
+                                  <img src="${menuItem.image}" alt="${menuItem.name}" class="menu-image">
+                                  <div class="image-overlay"></div>
+                                  <div class="image-overlay-gradient"></div>
                                 </div>
-                                <div class="content">
-                                    <div class="package-details">    
-                                        <div class="package-name">    
-                                            <h2>${menuItem.name}</h2>
-                                        </div>
-                                        <div class="package-price">        
-                                            <h4>Rs ${menuItem.price}</h4>
-                                        </div>    
+                                  <a href="#des" class="home__scroll">
+                                    <div class="home__scroll-box">
+                                      <i class="ri-arrow-down-s-line"></i>
                                     </div>
-                                    <div class="package-des">
-                                      <div class="heading">
-                                        <span class="package-des-title">Package Description</span>
-                                        <div class="hr">
-                                          <hr class="footer-hr des-hr" />
+                                    <span class="home__scroll-text">Scroll Down</span>
+                                  </a>
+                                <section class="packages-box-container">
+                                  <div class="content">
+                                      <div class="package-details">    
+                                          <div class="package-name">    
+                                              <h2>${menuItem.name}</h2>
+                                          </div>
+                                          <div class="package-price">        
+                                              <h4>Rs ${menuItem.price}</h4>
+                                          </div>    
+                                      </div>
+                                      <div class="package-des" id="des">
+                                        <div class="heading">
+                                          <span class="package-des-title">Package Description</span>
+                                          <div class="hr">
+                                            <hr class="footer-hr des-hr" />
+                                          </div>
                                         </div>
-                                      </div>
-                                      <div class="package-des1">
-                                        <p>${menuItem.description}</p>
-                                      </div>
-                                      <div class="package-des2">
-                                        <p>${menuItem.descriptionnext3}</p>
-                                      </div>
-                                  </div>
+                                        <div class="package-des1">
+                                          <p>${menuItem.description}</p>
+                                        </div>
+                                        <div class="package-des2">
+                                          <p>${menuItem.descriptionnext3}</p>
+                                        </div>
+                                    </div>
+                                  </section>
                                 </div>    
                             </div>`;
 
