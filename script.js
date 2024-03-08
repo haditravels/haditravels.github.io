@@ -2,18 +2,18 @@
 
 // loading will end after document is loaded
 
-const preloader = document.querySelector("[data-preaload]");
+// const preloader = document.querySelector("[data-preaload]");
 
-window.addEventListener("load", function () {
-  preloader.classList.add("loaded");
-  document.body.classList.add("loaded");
-});
+// window.addEventListener("load", function () {
+//   preloader.classList.add("loaded");
+//   document.body.classList.add("loaded");
+// });
 
-let navbar = document.querySelector(".header .navbar");
+// let navbar = document.querySelector(".header .navbar");
 
-document.querySelector("#menu-btn").onclick = () => {
-  navbar.classList.toggle("active");
-};
+// document.querySelector("#menu-btn").onclick = () => {
+//   navbar.classList.toggle("active");
+// };
 
 //----------------------------------------------- Hero section slider------------------------------
 // let nextDom = document.getElementById("next");
