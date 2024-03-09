@@ -11,6 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- <link rel="stylesheet" href="view.css" /> -->
     <link rel="stylesheet" href="packages.css" />
     <link rel="stylesheet" href="style.css" />
     <!-- Include the Firebase JavaScript SDK -->
@@ -27,10 +28,12 @@
       <a href="index.html"><img class="logo" src="images/logo.png" /></a>
 
       <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="#">Packages</a>
-        <a href="contact-page2/contact.html">Contact Us</a>
+        <a href="#">Home</a>
+        <a href="about.html" target="_blank">About Us</a>
+        <a href="packages.html" target="_blank">Packages</a>
+        <a href="visa.html" target="_blank">Visa's</a>
+        <a href="vlog.html" target="_blank">Vlogs and Blogs</a>
+        <a href="contact-page2/contact.html" target="_blank">Contact Us</a>
       </nav>
 
       <a href="#" class="btn">Book Now</a>
@@ -133,9 +136,9 @@
       ></a>
     </button>
     <script>
-     function redirectToUrl(url) {
-    window.location.href = url;
-}
+      function redirectToUrl(url) {
+        window.location.href = url;
+      }
 
       // ---------------------------------------------Preload--------------------------------------------
 
@@ -264,7 +267,7 @@
             var menuItemElement = document.createElement("div");
             menuItemElement.innerHTML = `
             
-            <button onclick="redirectToUrl('${menuItem.description}')">
+            <button class="btn-package" onclick="redirectToUrl('${menuItem.description}')">
         <div class="packagesBox">
             <div class="image">
                 <img src="${menuItem.image}" alt="${menuItem.name}" class="menu-image">
@@ -272,11 +275,12 @@
             <div class="content">
                 <div class="package-details">    
                     <div class="package-name">    
-                        <h2>${menuItem.name}</h2>
+                        <h2 class="multiline-ellipsis-2">${menuItem.name}</h2>
                     </div>
                 </div>    
             </div>    
-        </div> </button>
+        </div>
+        </button>
 `;
 
             menuContainer.appendChild(menuItemElement);

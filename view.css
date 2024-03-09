@@ -60,9 +60,9 @@ image-overlay::before {
 .package-price {
   color: var(--blue-color);
   font-size: 3rem;
-  position: absolute;
-  top: 85rem;
-  left: 72rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .package-name {

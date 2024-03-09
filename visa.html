@@ -28,10 +28,12 @@
       <a href="index.html"><img class="logo" src="images/logo.png" /></a>
 
       <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="#">Packages</a>
-        <a href="contact-page2/contact.html">Contact Us</a>
+        <a href="#">Home</a>
+        <a href="about.html" target="_blank">About Us</a>
+        <a href="packages.html" target="_blank">Packages</a>
+        <a href="visa.html" target="_blank">Visa's</a>
+        <a href="vlog.html" target="_blank">Vlogs and Blogs</a>
+        <a href="contact-page2/contact.html" target="_blank">Contact Us</a>
       </nav>
 
       <a href="#" class="btn">Book Now</a>
@@ -136,26 +138,26 @@
     </button>
     <script>
       function redirectToUrl(itemName) {
-    // Save itemName to localStorage
-    localStorage.setItem('itemName', itemName);
-    
-    var url = "/view.html";
-    window.location.href = url;
-}
-function redirectToUrl2(itemName) {
-    // Save itemName to localStorage
-    localStorage.setItem('itemName', itemName);
-    
-    var url = "/view2.html";
-    window.location.href = url;
-}
-function redirectToUrl3(itemName) {
-    // Save itemName to localStorage
-    localStorage.setItem('itemName', itemName);
-    
-    var url = "/view3.html";
-    window.location.href = url;
-}
+        // Save itemName to localStorage
+        localStorage.setItem("itemName", itemName);
+
+        var url = "/view.html";
+        window.location.href = url;
+      }
+      function redirectToUrl2(itemName) {
+        // Save itemName to localStorage
+        localStorage.setItem("itemName", itemName);
+
+        var url = "/view2.html";
+        window.location.href = url;
+      }
+      function redirectToUrl3(itemName) {
+        // Save itemName to localStorage
+        localStorage.setItem("itemName", itemName);
+
+        var url = "/view3.html";
+        window.location.href = url;
+      }
 
       // ---------------------------------------------Preload--------------------------------------------
 
@@ -303,7 +305,6 @@ function redirectToUrl3(itemName) {
           }
         }
       });
-
     </script>
   </body>
 </html>

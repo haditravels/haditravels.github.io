@@ -11,26 +11,124 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="about.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- <link rel="preload" as="image" href="images/about1.jpg" />
+    <link rel="preload" as="image" href="images/gallery 4.jpg" />
+    <link rel="preload" as="image" href="images/gallery 2.jpg" /> -->
   </head>
   <body>
     <!--------------------------------------------------------- Header ------------------------------------------->
 
     <div class="header">
       <div id="menu-btn"><i class="fa-solid fa-bars"></i></div>
-      <a href="index.html"><img class="logo" src="images/logo.png" /></a>
+      <a class="a-logo" href="#"
+        ><img class="logo" src="images/finalogo.png"
+      /></a>
 
       <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="#">About Us</a>
-        <a href="packages.html">Packages</a>
-        <a href="contact-page2/contact.html">Contact Us</a>
+        <a href="#">Home</a>
+        <a href="about.html" target="_blank">About Us</a>
+        <a href="packages.html" target="_blank">Packages</a>
+        <a href="visa.html" target="_blank">Visa's</a>
+        <a href="vlog.html" target="_blank">Vlogs and Blogs</a>
+        <a href="contact-page2/contact.html" target="_blank">Contact Us</a>
       </nav>
 
-      <a href="#" class="btn">Book Now</a>
+      <a href="tel:+923007030303" class="btn">Book Now</a>
     </div>
+
+    <!-- ----------------------------------------slider---------------------- ----------------->
+
+    <section
+      class="slider-container hero text-center"
+      aria-label="home"
+      id="home"
+    >
+      <ul class="hero-slider" data-hero-slider>
+        <li class="slider-item active" data-hero-slider-item>
+          <div class="slider-bg">
+            <img src="images/about-slider-1.jpg" class="img-cover" />
+          </div>
+
+          <div class="heading">
+            <span class="packages-span slider-reveal section-subtitle"
+              >Our History</span
+            >
+            <h1 class="slider-reveal hero-title">Make your destination</h1>
+
+            <a href="packages.html" class="btn slider-reveal">
+              <span class="text text-1">View Our Packages</span>
+              <!-- <span class="text text-2" aria-hidden="true">View Our Menu</span> -->
+            </a>
+          </div>
+        </li>
+
+        <li class="slider-item" data-hero-slider-item>
+          <div class="slider-bg">
+            <img src="images/about-slider-2.jpg" class="img-cover" />
+          </div>
+
+          <div class="heading">
+            <span class="packages-span slider-reveal section-subtitle"
+              >Our History</span
+            >
+            <h1 class="slider-reveal hero-title">Make your destination</h1>
+
+            <a href="packages.html" class="btn btn-primary slider-reveal">
+              <span class="text text-1">View Our Packages</span>
+              <!-- <span class="text text-2" aria-hidden="true">View Our Menu</span> -->
+            </a>
+          </div>
+        </li>
+
+        <li class="slider-item" data-hero-slider-item>
+          <div class="slider-bg">
+            <img src="images/about-slider-3.jpg" class="img-cover" />
+          </div>
+
+          <div class="heading">
+            <span class="packages-span slider-reveal section-subtitle"
+              >Our History</span
+            >
+            <h1 class="slider-reveal hero-title">Make your destination</h1>
+
+            <a href="packages.html" class="btn btn-primary slider-reveal">
+              <span class="text text-1">View Our Packages</span>
+              <!-- <span class="text text-2" aria-hidden="true">View Our Menu</span> -->
+            </a>
+          </div>
+        </li>
+      </ul>
+
+      <button
+        class="slider-btn prev"
+        aria-label="slide to previous"
+        data-prev-btn
+      >
+        <i class="ri-arrow-left-s-line"></i>
+      </button>
+
+      <button class="slider-btn next" aria-label="slide to next" data-next-btn>
+        <i class="ri-arrow-right-s-line"></i>
+      </button>
+
+      <!-- <a href="#reservation" class="hero-btn has-after">
+        <img src="images/hero-icon.png" width="48" height="48" alt="" />
+
+        <span class="label-2 text-center span"> Book A Table </span>
+      </a> -->
+    </section>
 
     <!--------------------------------------------------------- about ------------------------------------------->
 
@@ -118,29 +216,30 @@
     <section class="footer" data-aos="zoom-out-right">
       <div class="box-container">
         <div class="box">
-          <a href="index.html"><img class="logo" src="images/logo.png" /></a>
+          <a href="#"
+            ><img class="logo footer-logo" src="images/finalogo.png"
+          /></a>
           <p>
             "Discover the world with convenience and assurance. Experience
             seamless travel planning tailored just for you."
           </p>
           <div class="socials">
-            <a
-              href="https://www.facebook.com/AlHadiAviation?mibextid=kFxxJD"
-              class="fa-brands fa-facebook"
-            ></a>
+            <a href="https://www.facebook.com/AlHadiAviation?mibextid=kFxxJD"
+              ><img class="socials-icons" src="images/facebook.png"
+            /></a>
             <a
               href="https://www.instagram.com/hadi_travels?fbclid=IwAR1dMkVbsVUQThg-0PpeFLsAEIJ1LfWVqTj6vBcc7tlwbiq-HwDSWckv9OI"
-              class="fa-brands fa-instagram"
-            ></a>
-            <a href="tel:+923007030303" class="fa-brands fa-whatsapp"></a>
-            <a
-              href="mailto:Alhadiaviation2012@gmail.com"
-              class="fa-regular fa-envelope"
-            ></a>
-            <a
-              href="https://maps.app.goo.gl/NDRAbCDvNXHKxT4E8"
-              class="fa-solid fa-map"
-            ></a>
+              ><img class="socials-icons" src="images/instagram.png"
+            /></a>
+            <a href="https://wa.me/+923007030303"
+              ><img class="socials-icons" src="images/whatsaap.png"
+            /></a>
+            <a href="mailto:info@haditravels.com"
+              ><img class="socials-icons" src="images/mail.png"
+            /></a>
+            <a href="https://maps.app.goo.gl/NDRAbCDvNXHKxT4E8"
+              ><img class="socials-icons" src="images/maps.png"
+            /></a>
           </div>
         </div>
 
@@ -169,10 +268,8 @@
         <div class="box contact-info">
           <h3>Contact Info</h3>
           <p><i class="fa-solid fa-map-location-dot"></i>Pakistan, Karachi</p>
-          <p><i class="fa-solid fa-phone"></i>+92-300-7030303</p>
-          <p>
-            <i class="fa-solid fa-envelope"></i>Alhadiaviation2012@gmail.com
-          </p>
+          <p><i class="fa-solid fa-phone"></i>02133378466</p>
+          <p><i class="fa-solid fa-envelope"></i>info@haditravels.com</p>
           <p><i class="fa-solid fa-clock"></i>10:00 am - 10:00 pm</p>
         </div>
 
@@ -182,6 +279,7 @@
           <form action="" id="newsletter">
             <input
               type="email"
+              id="email"
               name=""
               placeholder="Drop your email"
               class="newsletter"
@@ -193,12 +291,13 @@
     </section>
 
     <div class="copywrite"><span>Hadi-Travels</span> | all rights reserved</div>
-    
-<button class="btn-hover2 instagrmBar" id="instagrmBar">
+
+    <button class="btn-hover2 instagrmBar" id="instagrmBar">
       <a href="https://wa.me/+923007030303"
         ><i class="fa-brands fa-whatsapp"></i
       ></a>
     </button>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({
@@ -208,5 +307,6 @@
     </script>
 
     <script src="script.js"></script>
+    <script src="about.js"></script>
   </body>
 </html>

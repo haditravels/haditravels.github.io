@@ -15,55 +15,66 @@
 //   navbar.classList.toggle("active");
 // };
 
-//----------------------------------------------- Hero section slider------------------------------
-// let nextDom = document.getElementById("next");
-// let prevDom = document.getElementById("prev");
+// ---------------------------------------------------Hero slider------------------------------------------
 
-// let sliderDom = document.querySelector(".slider");
-// let SliderDom = sliderDom.querySelector(".slider .list");
-// let thumbnailBorderDom = document.querySelector(".slider .thumbnail");
-// let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
-// let timeDom = document.querySelector(".slider .time");
+let nextDom = document.getElementById("next");
+let prevDom = document.getElementById("prev");
 
-// thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-// let timeRunning = 3000;
-// let timeAutoNext = 7000;
+let sliderDom = document.querySelector(".slider");
+let SliderDom = sliderDom.querySelector(".slider .list");
+let thumbnailBorderDom = document.querySelector(".slider .thumbnail");
+let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
+let timeDom = document.querySelector(".slider .time");
 
-// nextDom.onclick = function () {
-//   showSlider("next");
-// };
+thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+let timeRunning = 3000;
+let timeAutoNext = 7000;
 
-// prevDom.onclick = function () {
-//   showSlider("prev");
-// };
-// let runTimeOut;
-// let runNextAuto = setTimeout(() => {
-//   next.click();
-// }, timeAutoNext);
-// function showSlider(type) {
-//   let SliderItemsDom = SliderDom.querySelectorAll(".slider .list .item");
-//   let thumbnailItemsDom = document.querySelectorAll(".slider .thumbnail .item");
+nextDom.onclick = function () {
+  showSlider("next");
+};
 
-//   if (type === "next") {
-//     SliderDom.appendChild(SliderItemsDom[0]);
-//     thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-//     sliderDom.classList.add("next");
-//   } else {
-//     SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
-//     thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
-//     sliderDom.classList.add("prev");
-//   }
-//   clearTimeout(runTimeOut);
-//   runTimeOut = setTimeout(() => {
-//     sliderDom.classList.remove("next");
-//     sliderDom.classList.remove("prev");
-//   }, timeRunning);
+prevDom.onclick = function () {
+  showSlider("prev");
+};
+let runTimeOut;
+let runNextAuto = setTimeout(() => {
+  next.click();
+}, timeAutoNext);
+function showSlider(type) {
+  let SliderItemsDom = SliderDom.querySelectorAll(".slider .list .item");
+  let thumbnailItemsDom = document.querySelectorAll(".slider .thumbnail .item");
 
-//   clearTimeout(runNextAuto);
-//   runNextAuto = setTimeout(() => {
-//     next.click();
-//   }, timeAutoNext);
-// }
+  if (type === "next") {
+    SliderDom.appendChild(SliderItemsDom[0]);
+    thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+    sliderDom.classList.add("next");
+  } else {
+    SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+    thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+    sliderDom.classList.add("prev");
+  }
+  clearTimeout(runTimeOut);
+  runTimeOut = setTimeout(() => {
+    sliderDom.classList.remove("next");
+    sliderDom.classList.remove("prev");
+  }, timeRunning);
+
+  clearTimeout(runNextAuto);
+  runNextAuto = setTimeout(() => {
+    next.click();
+  }, timeAutoNext);
+}
+
+/**
+ * add event listener on multiple elements
+ */
+
+const addEventOnElements = function (elements, eventType, callback) {
+  for (let i = 0, len = elements.length; i < len; i++) {
+    elements[i].addEventListener(eventType, callback);
+  }
+};
 
 // --------------------------------------------------Sidebar------------------------------------------
 

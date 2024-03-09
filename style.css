@@ -241,12 +241,12 @@ body {
 
 /* ----------------------------------------------------------Header------------------------------------- */
 
-a-logo {
-  padding-right: 17rem;
-}
+/* a-logo {
+  padding-right: -2rem;
+} */
 
 .logo {
-  width: 40%;
+  width: 30%;
 }
 
 #menu-btn {
@@ -275,6 +275,7 @@ a-logo {
   align-items: center;
   z-index: 10;
   padding: 1.5rem 9%;
+  /* margin-bottom: 10rem; */
 }
 
 .header .btn {
@@ -283,16 +284,21 @@ a-logo {
 
 .navbar a {
   display: inline-block;
-  font-size: 1.7rem;
-  color: var(--light-color);
-  margin: 0 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--white-color);
+  margin: 0 1.2rem;
 }
 .navbar a:hover {
   color: var(--blue-color);
 }
 .navbar {
   width: 100%;
-  margin-left: 35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: -32rem;
 }
 
 /* ---------------------------------Right sidebar------------------- */
@@ -314,7 +320,7 @@ a-logo {
   overflow-x: hidden;
   transition: 0.5s;
   padding: 60px 25px 20px 30px;
-  z-index: 2;
+  /* z-index: 100; */
   background: linear-gradient(42deg, #104860 0.01%, #0c3a60 100%);
 }
 .close_rightsidebar {
@@ -391,6 +397,7 @@ a-logo {
   height: 100vh;
   overflow: hidden;
   position: relative;
+  /* margin-top: 10rem; */
 }
 .slider .list .item {
   position: absolute;
@@ -398,6 +405,7 @@ a-logo {
   left: 0;
   bottom: 0;
   right: 0;
+  margin-top: 10rem;
 }
 .slider .list .item img {
   width: 100%;
@@ -525,6 +533,7 @@ a-logo {
   -o-transition: 0.5s;
   transition: 0.5s;
   z-index: 6;
+  cursor: pointer;
 }
 
 .arrows button:hover {
