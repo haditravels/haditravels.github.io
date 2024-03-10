@@ -926,10 +926,14 @@ aside .pages {
   border-radius: 5rem;
   border: var(--border);
   font-size: 1.6rem;
-  color: var(--light-color);
+  color: var(--white-color);
   text-transform: none;
   background: none;
   margin-top: 1rem;
+}
+
+.inputBox input::placeholder {
+  color: var(--white-color);
 }
 
 /* ----------------------------------------------------------About us------------------------------------- */
@@ -1195,6 +1199,106 @@ aside .pages {
   font-size: 2rem;
 }
 
+/* ----------------------------------------------------------Testimonials------------------------------------- */
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+}
+
+.view__section {
+  background-color: var(--black-color);
+}
+
+.swiper-slide {
+  text-align: center;
+  flex-shrink: 0;
+  transition-property: transform;
+  font-size: 18px;
+  background: var(--black-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  border: var(--border);
+  background-color: #222222;
+}
+
+.swiper__client-msg {
+  padding: 5rem 8rem;
+  /* border: var(--border); */
+  /* background-color: white; */
+  border-radius: 1rem;
+  font-size: var(--small-font-size);
+  /* width: 120%; */
+  text-align: left;
+  /* box-shadow: 0 8px 24px hsla(228, 66%, 45%, 0.1); */
+  position: relative;
+  color: var(--white-color);
+  text-align: center;
+}
+.swiper__client-msg::before {
+  content: none;
+  position: absolute;
+  bottom: -6rem;
+  transform: translateX(-50%);
+  left: 50%;
+  border: 3rem solid #fff;
+  border-color: transparent;
+  border-top-color: var(--text-color-light);
+}
+.swiper__client-msg p::before {
+  content: "\f10d";
+  position: absolute;
+  top: 3rem;
+  left: 4rem;
+  font-size: 3rem;
+  font-family: "font awesome 6 free";
+  font-weight: 900;
+  color: var(--blue-color);
+}
+.swiper__client-msg p::after {
+  content: "\f10e";
+  position: absolute;
+  bottom: 3rem;
+  right: 4rem;
+  font-size: 3rem;
+  font-family: "font awesome 6 free";
+  font-weight: 900;
+  color: var(--blue-color);
+}
+
+.swiper__client-data img {
+  max-width: 7rem;
+  transform: translateX(-6rem);
+  height: 7rem;
+  border-radius: 50%;
+  padding: 0.5rem;
+  border: 0.25rem solid var(--text-color-light);
+}
+.swiper__client-data {
+  align-items: center;
+  margin-top: 3.2rem;
+  /* gap: 3.2rem; */
+  /* column-gap: 5rem; */
+}
+.client-data {
+  font-size: var(--smaller-font-size);
+  /* transform: translateY(-4rem); */
+  transform: translate(2rem, -4rem);
+}
+.views__data1 {
+  opacity: 70%;
+  color: var(--white-color);
+}
+.views__data2 {
+  font-weight: 900;
+  font-size: var(--small-font-size);
+  color: var(--white-color);
+}
+
 /* ------------------------------------------------------- Airlines ------------------------------------- */
 .logos {
   height: 15rem;
@@ -1309,7 +1413,7 @@ aside .pages {
 
 .footer .box p {
   padding: 1rem 0;
-  font-size: 1.4rem;
+  font-size: 2rem;
   color: var(--light-color);
   line-height: 2;
 }
@@ -1328,7 +1432,7 @@ aside .pages {
 }
 
 .links {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--light-color);
   padding: 1rem 0;
   display: block;

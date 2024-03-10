@@ -3,17 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Display Item ID from Cache</title>
-    <!-- Include the Firebase JavaScript SDK -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
-    <!-- <script src="script.js"></script> -->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="view.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <title>Document</title>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -21,8 +12,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="bussiness.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!--------------------------------------------------------- Header ------------------------------------------->
+
     <div class="header">
       <button onclick="openNav()" class="navbar-toggler" type="button">
         <i class="ri-menu-line"></i>
@@ -40,6 +39,7 @@
         <a href="contact-page2/contact.html" target="_blank">Contact Us</a>
       </nav>
 
+      <!-- open sidebar -->
       <aside class="sidepanel" id="mysidepanel">
         <div class="sidebar flex">
           <button
@@ -66,22 +66,60 @@
       <a href="tel:+923007030303" class="btn">Book Now</a>
     </div>
 
-    <section class="packages" id="services">
+    <!--------------------------------------------------------- Partners ------------------------------------------->
+
+    <section class="partners" id="services">
       <div class="heading">
-        <span>Our Packages</span>
-        <h1>DOMESTIC PACKAGES</h1>
+        <h1>Our Partners</h1>
+      </div>
+
+      <div class="box-container">
+        <div class="image">
+          <img src="images/partners1.png" alt="" />
+        </div>
+        <div class="image">
+          <img src="images/partners2.png" alt="" />
+        </div>
+        <div class="image">
+          <img src="images/partners3.png" alt="" />
+        </div>
       </div>
     </section>
 
-    <!-- packages -->
+    <!-- ---------------------------- Regestration ------------------------------- -->
+    <section class="regestration">
+      <div class="heading">
+        <h1>We Are Registered</h1>
+      </div>
 
-    <div id="menu"></div>
-    <div id="itemIdDisplay"></div>
-    <section class="packages-box-container">
-      <div class="button">
-        <a href="https://wa.me/+923007030303" class="btn">Message Now</a>
+      <div class="box-container">
+        <div class="image">
+          <img src="images/reges1.png" alt="" />
+        </div>
+        <div class="image">
+          <img src="images/reges2.jpg" alt="" />
+        </div>
+        <div class="image">
+          <img src="images/reges3.jpg" alt="" />
+        </div>
+        <div class="image">
+          <img src="images/reges4.jpg" alt="" />
+        </div>
+        <div class="image">
+          <img src="images/reges5.jpg" alt="" />
+        </div>
+        <div class="image">
+          <img src="images/reges6.jpg" alt="" />
+        </div>
+        <div class="image">
+          <img src="images/reges7.jpg" alt="" />
+        </div>
       </div>
     </section>
+
+    <div class="hr">
+      <hr class="footer-hr" />
+    </div>
 
     <!--------------------------------------------------------- Footer ------------------------------------------->
 
@@ -163,104 +201,11 @@
     </section>
 
     <div class="copywrite"><span>Hadi-Travels</span> | all rights reserved</div>
-
     <!-- ------------backtotop ------------------>
     <button class="instagrmBar" id="instagrmBar">
       <a href="https://wa.me/+923007030303"
         ><img class="socials-icons" src="images/whatsaap.png"
       /></a>
     </button>
-
-    <!-- backend -->
-    <script src="firebase.js"></script>
-    <script>
-      firebase.initializeApp(firebaseConfig);
-
-      // Get a reference to the database
-      var database = firebase.database();
-
-      // Fetch menu data from Firebase
-      var menuRef = database.ref("domestic");
-      menuRef.on("value", function (snapshot) {
-        var menuData = snapshot.val();
-
-        // Retrieve itemId from localStorage
-        var itemId = localStorage.getItem("itemName");
-
-        // Display menu data on the web page
-        var menuContainer = document.getElementById("menu");
-        menuContainer.innerHTML = "";
-
-        for (var key in menuData) {
-          if (menuData.hasOwnProperty(key)) {
-            var menuItem = menuData[key];
-            if (menuItem.name === itemId) {
-              // Check if item ID matches
-              var menuItemElement = document.createElement("div");
-              menuItemElement.innerHTML = `
-                            <div class="packagesBox">
-                                <div class="image">
-                                    <img src="${menuItem.image}" alt="${menuItem.name}" class="menu-image">
-                                    <div class="image-overlay"></div>
-                                    <div class="image-overlay-gradient"></div>
-                                </div>
-                                <a href="#des" class="home__scroll">
-                                    <div class="home__scroll-box">
-                                      <i class="ri-arrow-down-s-line"></i>
-                                    </div>
-                                    <span class="home__scroll-text">Scroll Down</span>
-                                  </a>
-                                  <section class="packages-box-container">
-                                    <div class="content">
-                                      <div class="package-details">    
-                                          <div class="package-name">    
-                                              <h2>${menuItem.name}</h2>
-                                         </div> 
-                                      </div>
-                                          <div class="package-price">        
-                                              <h4>Rs ${menuItem.price}</h4>
-                                          </div>
-                                      <div class="package-des" id="des">
-                                        <div class="heading">
-                                          <span class="package-des-title">Package Description</span>
-                                          <div class="hr">
-                                            <hr class="footer-hr des-hr" />
-                                          </div>
-                                        </div>   
-                                          <div class="package-des1">
-                                            <p class="des-1">${menuItem.description}</p>
-                                          </div>
-                                          <div class="package-des2">
-                                            <p class="des-2">${menuItem.descriptionnext}</p>
-                                          </div> 
-                                      </div>
-                                    </section>      
-                                  </div>    
-                              </div>`;
-
-              menuContainer.appendChild(menuItemElement);
-            }
-          }
-        }
-      });
-    </script>
-    <script>
-      // --------------------------------------------------Sidebar------------------------------------------
-
-      function openNav() {
-        const sidePanel = document.getElementById("mysidepanel");
-        if (sidePanel) {
-          sidePanel.style.left = "0";
-        } else {
-          console.error("sidepanel not found");
-        }
-      }
-      function closeNav() {
-        const sidePanel = document.getElementById("mysidepanel");
-        if (sidePanel) {
-          sidePanel.style.left = "-320px";
-        }
-      }
-    </script>
   </body>
 </html>

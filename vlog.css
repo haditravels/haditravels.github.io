@@ -1,0 +1,15 @@
+.vlogs .heading {
+  margin-bottom: 10rem;
+  /* margin-top: 1; */
+}
+.vlogs .heading span {
+  font-size: 3rem;
+}
+
+#menu {
+  text-align: center;
+}
+
+.btn-package {
+  width: 40rem;
+}

@@ -1,0 +1,60 @@
+:root {
+  --blue-color: #29d9d5;
+  --black-color: #111;
+  --white-color: #fff;
+  --light-color: #aaa;
+  --bg-color: #222;
+  --black-bg: rgba(17, 17, 17, 0.7);
+  --border: 0.2rem solid #29d9d5;
+}
+
+.partners {
+  transform: translateY(25rem);
+  margin-bottom: 30rem;
+}
+
+.partners .heading {
+  margin: 5rem 0;
+}
+
+.partners .box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+}
+
+.partners .image img,
+.regestration .image img {
+  width: 12rem;
+  margin-top: 3rem;
+  /* margin-bottom: -10rem; */
+}
+
+.regestration .box-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.regestration .image:hover {
+  transform: scale(1.1);
+  /* border: var(--border); */
+}
+
+/* ----------------------------------------------------------Breakpoints------------------------------------- */
+
+@media (max-width: 768px) {
+  .partners .box-container {
+    gap: 2rem;
+  }
+
+  .regestration .box-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .regestration .box-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
