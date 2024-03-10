@@ -539,11 +539,11 @@ aside .pages {
   font-family: "Dancing Script", cursive;
   font-weight: bold;
   letter-spacing: 10px;
-  font-size: 6rem;
+  font-size: 10rem;
 }
 .item .content .title {
   font-weight: bold;
-  font-size: 4em;
+  font-size: 4rem;
   line-height: 1.3em;
 }
 
