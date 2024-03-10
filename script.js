@@ -15,6 +15,23 @@
 //   navbar.classList.toggle("active");
 // };
 
+// --------------------------------------------------Sidebar------------------------------------------
+
+function openNav() {
+  const sidePanel = document.getElementById("mysidepanel");
+  if (sidePanel) {
+    sidePanel.style.left = "0";
+  } else {
+    console.error("sidepanel not found");
+  }
+}
+function closeNav() {
+  const sidePanel = document.getElementById("mysidepanel");
+  if (sidePanel) {
+    sidePanel.style.left = "-320px";
+  }
+}
+
 // ---------------------------------------------------Hero slider------------------------------------------
 
 let nextDom = document.getElementById("next");
@@ -65,16 +82,6 @@ function showSlider(type) {
     next.click();
   }, timeAutoNext);
 }
-
-/**
- * add event listener on multiple elements
- */
-
-const addEventOnElements = function (elements, eventType, callback) {
-  for (let i = 0, len = elements.length; i < len; i++) {
-    elements[i].addEventListener(eventType, callback);
-  }
-};
 
 // --------------------------------------------------Sidebar------------------------------------------
 
