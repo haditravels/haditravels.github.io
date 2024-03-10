@@ -574,14 +574,6 @@ aside .pages {
   gap: 20px;
 }
 
-.thumbnail-des {
-  font-size: 1.2rem;
-  line-height: 1.3em;
-  color: var(--white-color);
-  background-color: var(--bg-color);
-  border-radius: 1rem;
-}
-
 .thumbnail .item {
   width: 150px;
   height: 220px;
@@ -699,7 +691,7 @@ aside .pages {
   animation-delay: 1.8s !important;
 }
 /* create animation when next click */
-.slider.next .list .item:nth-child(1) img {
+/* .slider.next .list .item:nth-child(1) img {
   width: 150px;
   height: 220px;
   position: absolute;
@@ -708,7 +700,7 @@ aside .pages {
   border-radius: 30px;
   -webkit-animation: showImage 0.5s linear 1 forwards;
   animation: showImage 0.5s linear 1 forwards;
-}
+} */
 
 @-webkit-keyframes showImage {
   to {
