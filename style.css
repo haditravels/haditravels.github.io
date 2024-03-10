@@ -7,6 +7,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
 * {
   font-family: "poppins", sans-serif;
   margin: 0;
@@ -534,6 +536,7 @@ aside .pages {
   text-shadow: 0 5px 10px #0004;
 }
 .item .content .author {
+  font-family: "Dancing Script", cursive;
   font-weight: bold;
   letter-spacing: 10px;
   font-size: 6rem;
