@@ -124,4 +124,25 @@
   .regestration .box-container {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .bank-details .box-container .box {
+    width: 40rem;
+    height: 35rem;
+  }
+
+  .bank-details .box-container .box .image {
+    border-radius: 50%;
+    width: 15rem;
+    margin-left: 2rem;
+  }
+
+  .bank-details .box-container .box .image img {
+    width: 12rem;
+    border-radius: 50%;
+  }
+
+  .partners {
+    transform: translateY(15rem);
+    /* margin-bottom: 30rem; */
+  }
 }
