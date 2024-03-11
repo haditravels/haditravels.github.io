@@ -16,6 +16,27 @@
 // };
 
 // --------------------------------------------------Sidebar------------------------------------------
+function closePopup() {
+  document.querySelector('.overlay2').style.display = 'none';
+  document.querySelector('.contact-popup').style.display = 'none';
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelector('.overlay2').style.display = 'block';
+  document.querySelector('.contact-popup').style.display = 'block';
+
+  document.getElementById('popupForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent form submission for this example
+    // Here you can add code to handle form submission (e.g., AJAX request)
+   // Placeholder for form submission handling
+    closePopup(); // Close the popup after form submission
+  });
+
+  // Adding event listener after DOM content is loaded
+  document.querySelector('.close-btn').addEventListener('click', function() {
+    closePopup(); // Close the popup when the close button is clicked
+  });
+});
 
 function openNav() {
   const sidePanel = document.getElementById("mysidepanel");
@@ -185,4 +206,27 @@ form2.addEventListener("submit", async (e) => {
     email,
   });
   alert("You are successfully subscribed.");
+});
+// Get a reference to the database
+const database3 = firebase.database();
+
+// Get the form element
+const form3 = document.querySelector("#popupForm");
+
+// Add submit event listener
+form3.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  // Get input field value
+  const name= document.querySelector("#namep").value;
+  const contact = document.querySelector("#contactp").value;
+  const message = document.querySelector("#messagep").value;
+
+  // Save data to Firebase
+  database2.ref("popup").push({
+    name,
+    contact,
+    message
+  });
+  alert("Your form is sent to relevant team,you will be contacted soon.");
 });

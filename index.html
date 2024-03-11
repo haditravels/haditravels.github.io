@@ -155,7 +155,23 @@
     </div>
 
     <!--------------------------------------------------------- Home ------------------------------------------->
+  
+    <div class="overlay2"></div>
 
+    <div class="contact-popup" id="contactForm">
+      <span class="close-btn" onclick="closePopup()">×</span>
+
+      <h2>Contact Us</h2>
+      <form id="popupForm">
+        <label for="name">Name:</label>
+        <input type="text" id="namep" name="name" required>
+        <label for="contactno">CONTACT NO:</label>
+        <input type="tel" id="contactp" name="contactno" required>
+        <label for="messagep">Message:</label>
+        <textarea id="messagep" name="message" rows="4" required></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
     <div class="slider" id="home">
       <div class="list">
         <div class="item">
@@ -902,6 +918,9 @@
         ><img class="socials-icons" src="images/whatsaap.png"
       /></a>
     </button>
+
+
+
 
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
