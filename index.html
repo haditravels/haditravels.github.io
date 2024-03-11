@@ -154,24 +154,34 @@
       </section>
     </div>
 
-    <!--------------------------------------------------------- Home ------------------------------------------->
+    <!----------------------------------------- contact form on screen --------------------------------->
   
     <div class="overlay2"></div>
 
     <div class="contact-popup" id="contactForm">
-      <span class="close-btn" onclick="closePopup()">×</span>
+      <div  data-aos="zoom-in" class="contact-container">
+        <div class="contact-image">
+          <img src="images/contact image.png" />
+        </div>
+        <span class="close-btn" onclick="closePopup()"><i class="ri-close-large-line"></i></span>
 
-      <h2>Contact Us</h2>
-      <form id="popupForm">
-        <label for="name">Name:</label>
-        <input type="text" id="namep" name="name" required>
-        <label for="contactno">CONTACT NO:</label>
-        <input type="tel" id="contactp" name="contactno" required>
-        <label for="messagep">Message:</label>
-        <textarea id="messagep" name="message" rows="4" required></textarea>
-        <input type="submit" value="Submit">
-      </form>
+        <div class="contact-form">
+          <h2>Contact Us</h2>
+          <form class="popup-form" id="popupForm">
+            <label class="name" for="name">Name:</label>
+            <input type="text" id="namep" name="name" required>
+            <label for="contactno">CONTACT NO:</label>
+            <input type="tel" id="contactp" name="contactno" required>
+            <label for="messagep">Message:</label>
+            <textarea id="messagep" name="message" rows="4" required></textarea>
+            <input type="submit" class="btn" value="Submit">
+          </form>
+        </div>
+      </div>
     </div>
+
+    <!--------------------------------------------------------- Home ------------------------------------------->
+
     <div class="slider" id="home">
       <div class="list">
         <div class="item">
@@ -196,7 +206,7 @@
           <img src="images/slider2-min.jpg" />
           <div class="content">
             <div class="author">Hadi Travels</div>
-            <div class="topic">Embark Your Adventures</div>
+            <div class="topic">Embark Your Dreams</div>
             <div class="des">
               Embark on unforgettable journeys with Hadi Travels! Discover
               breathtaking destinations, from pristine beaches to bustling
