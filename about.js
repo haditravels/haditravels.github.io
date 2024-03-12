@@ -55,7 +55,7 @@ let autoSlideInterval;
 const autoSlide = function () {
   autoSlideInterval = setInterval(function () {
     slideNext();
-  }, 7000);
+  }, 5000);
 };
 
 addEventOnElements(

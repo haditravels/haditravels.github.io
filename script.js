@@ -17,23 +17,23 @@
 
 // --------------------------------------------------Sidebar------------------------------------------
 function closePopup() {
-  document.querySelector('.overlay2').style.display = 'none';
-  document.querySelector('.contact-popup').style.display = 'none';
+  document.querySelector(".overlay2").style.display = "none";
+  document.querySelector(".contact-popup").style.display = "none";
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  document.querySelector('.overlay2').style.display = 'block';
-  document.querySelector('.contact-popup').style.display = 'block';
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector(".overlay2").style.display = "block";
+  document.querySelector(".contact-popup").style.display = "block";
 
-  document.getElementById('popupForm').addEventListener('submit', function(e) {
+  document.getElementById("popupForm").addEventListener("submit", function (e) {
     e.preventDefault(); // Prevent form submission for this example
     // Here you can add code to handle form submission (e.g., AJAX request)
-   // Placeholder for form submission handling
+    // Placeholder for form submission handling
     closePopup(); // Close the popup after form submission
   });
 
   // Adding event listener after DOM content is loaded
-  document.querySelector('.close-btn').addEventListener('click', function() {
+  document.querySelector(".close-btn").addEventListener("click", function () {
     closePopup(); // Close the popup when the close button is clicked
   });
 });
@@ -65,8 +65,8 @@ let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
 let timeDom = document.querySelector(".slider .time");
 
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-let timeRunning = 3000;
-let timeAutoNext = 7000;
+let timeRunning = 1000;
+let timeAutoNext = 5000;
 
 nextDom.onclick = function () {
   showSlider("next");
@@ -218,7 +218,7 @@ form3.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   // Get input field value
-  const name= document.querySelector("#namep").value;
+  const name = document.querySelector("#namep").value;
   const contact = document.querySelector("#contactp").value;
   const message = document.querySelector("#messagep").value;
 
@@ -226,7 +226,7 @@ form3.addEventListener("submit", async (e) => {
   database2.ref("popup").push({
     name,
     contact,
-    message
+    message,
   });
   alert("Your form is sent to relevant team,you will be contacted soon.");
 });
