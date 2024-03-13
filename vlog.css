@@ -18,6 +18,10 @@
   margin-bottom: 40rem;
 }
 
+#mydiv {
+  margin-top: -2rem;
+}
+
 #miniplayer {
   /* border: 1rem solid #29d9d5; */
   position: absolute;

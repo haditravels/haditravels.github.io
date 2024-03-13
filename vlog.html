@@ -336,7 +336,7 @@
             var menuItemElement = document.createElement("div");
             menuItemElement.innerHTML = `
 
-<button class="btn-package" onclick="openMiniPlayer('${menuItem.description}')">
+<a href="#mydiv" class="btn-package" onclick="openMiniPlayer('${menuItem.description}')">
         <div class="packagesBox">
             <div class="image">
                 <img src="${menuItem.image}" alt="${menuItem.name}" class="menu-image">
@@ -349,7 +349,7 @@
                 </div>    
             </div>    
         </div>
-      </button>
+      </a>
 `;
 
             menuContainer.appendChild(menuItemElement);
