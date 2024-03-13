@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Packages</title>
+    <style>
+    #miniplayer {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 300px;
+      height: 200px;
+      z-index: 9999;
+    }
+  </style>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -24,6 +34,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
     <!-- Include any other dependencies you might need -->
     <style></style>
+    <script src="https://www.youtube.com/iframe_api"></script>
   </head>
   <body>
     <!-- -----------------------------------------------Header------------------------------------- -->
@@ -73,7 +84,7 @@
       <a href="tel:+923007030303" class="btn">Book Now</a>
     </div>
     <!--------------------------------------------------------- Packages ------------------------------------------->
-
+<div id="miniplayer"></div>
     <section class="vlogs">
       <div class="heading">
         <span class="packages-span">Vlogs and Blogs</span>
@@ -83,6 +94,7 @@
         <div id="menu"></div>
       </div>
     </section>
+
     <!--------------------------------------------------------- Footer ------------------------------------------->
 
     <section class="footer" data-aos="zoom-out-right">
@@ -318,8 +330,8 @@
             var menuItem = menuData[key];
             var menuItemElement = document.createElement("div");
             menuItemElement.innerHTML = `
-            
-            <button class="btn-package" onclick="redirectToUrl('${menuItem.description}')">
+
+<button onclick="openMiniPlayer('${menuItem.description}')">
         <div class="packagesBox">
             <div class="image">
                 <img src="${menuItem.image}" alt="${menuItem.name}" class="menu-image">
@@ -332,13 +344,20 @@
                 </div>    
             </div>    
         </div>
-        </button>
+      </button>
 `;
 
             menuContainer.appendChild(menuItemElement);
           }
         }
       });
+    
+
+<!-- JavaScript to open the miniplayer -->
+  function openMiniPlayer(videoId) {
+    var miniplayer = document.getElementById('miniplayer');
+    miniplayer.innerHTML = '<iframe width="300" height="200" src="https://www.youtube.com/embed/' + videoId + '?autoplay=1" frameborder="0" allowfullscreen></iframe>';
+  }
     </script>
   </body>
 </html>
