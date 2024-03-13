@@ -13,3 +13,29 @@
 .btn-package {
   width: 40rem;
 }
+
+.vlogs-border {
+  margin-bottom: 40rem;
+}
+
+#miniplayer {
+  /* border: 1rem solid #29d9d5; */
+  position: absolute;
+  z-index: 9;
+  text-align: center;
+  cursor: move;
+  right: 0;
+  left: 35%;
+  bottom: 0;
+  top: 40%;
+  /* margin-bottom: 25rem; */
+}
+
+#miniplayer iframe {
+  border: 1rem solid #29d9d5;
+  width: 50rem;
+  text-align: center;
+  height: 30rem;
+  padding: 10px;
+  z-index: 10;
+}

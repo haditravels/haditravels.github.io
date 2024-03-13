@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Packages</title>
     <style>
-    #miniplayer {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      width: 300px;
-      height: 200px;
-      z-index: 9999;
-    }
-  </style>
+      #miniplayer {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 300px;
+        height: 200px;
+        z-index: 9999;
+      }
+    </style>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -83,11 +83,16 @@
 
       <a href="tel:+923007030303" class="btn">Book Now</a>
     </div>
-    <!--------------------------------------------------------- Packages ------------------------------------------->
-<div id="miniplayer"></div>
+    <!--------------------------------------------------------- vlogs ------------------------------------------->
+    <div id="mydiv">
+      <div id="miniplayer" class="miniplayer" draggable="true"></div>
+    </div>
     <section class="vlogs">
       <div class="heading">
         <span class="packages-span">Vlogs and Blogs</span>
+      </div>
+      <div class="vlogs-border">
+        <div class="vlogs-border-container"></div>
       </div>
 
       <div class="packages-box-container">
@@ -351,13 +356,15 @@
           }
         }
       });
-    
 
-<!-- JavaScript to open the miniplayer -->
-  function openMiniPlayer(videoId) {
-    var miniplayer = document.getElementById('miniplayer');
-    miniplayer.innerHTML = '<iframe width="300" height="200" src="https://www.youtube.com/embed/' + videoId + '?autoplay=1" frameborder="0" allowfullscreen></iframe>';
-  }
+      <!-- JavaScript to open the miniplayer -->
+      function openMiniPlayer(videoId) {
+        var miniplayer = document.getElementById("miniplayer");
+        miniplayer.innerHTML =
+          '<iframe src="https://www.youtube.com/embed/' +
+          videoId +
+          '?autoplay=1" frameborder="0" allowfullscreen></iframe>';
+      }
     </script>
   </body>
 </html>
