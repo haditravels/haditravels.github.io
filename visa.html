@@ -25,7 +25,7 @@
     <style></style>
   </head>
   <body>
-    <!-- -----------------------------------------------Header------------------------------------- -->
+    <!--------------------------------------------------------- Header ------------------------------------------->
 
     <div class="header">
       <button onclick="openNav()" class="navbar-toggler" type="button">
@@ -76,13 +76,39 @@
 
     <section class="packages">
       <div class="heading">
-        <span class="packages-span">Visas</span>
+        <span class="packages-span">Our Packages</span>
+        <h1>DOMESTIC PACKAGES</h1>
       </div>
 
       <div class="packages-box-container">
         <div id="menu"></div>
       </div>
     </section>
+    <br />
+    <section class="packages">
+      <div class="heading">
+        <h1>INTERNATIONAL PACKAGES</h1>
+      </div>
+
+      <div class="packages-box-container">
+        <div id="menu2"></div>
+      </div>
+    </section>
+    <br />
+
+    <section class="packages">
+      <div class="heading">
+        <h1>UMRAH AND HAJJ</h1>
+      </div>
+
+      <div class="packages-box-container">
+        <div id="menu3"></div>
+      </div>
+    </section>
+
+    <div class="hr">
+      <hr class="footer-hr" />
+    </div>
 
     <!--------------------------------------------------------- Footer ------------------------------------------->
 
@@ -324,7 +350,7 @@
       var database = firebase.database();
 
       // Fetch menu data from Firebase
-      var menuRef = database.ref("visa");
+      var menuRef = database.ref("domestic");
       menuRef.on("value", function (snapshot) {
         var menuData = snapshot.val();
 
@@ -338,6 +364,7 @@
             var menuItemElement = document.createElement("div");
             menuItemElement.innerHTML = `
             
+            <button class="btn-package" onclick="redirectToUrl('${menuItem.name}')">
         <div class="packagesBox">
             <div class="image">
                 <img src="${menuItem.image}" alt="${menuItem.name}" class="menu-image">
@@ -345,12 +372,93 @@
             <div class="content">
                 <div class="package-details">    
                     <div class="package-name">    
-                        <h2>${menuItem.name}</h2>
-                    </div>   
+                        <h2 class="multiline-ellipsis-2">${menuItem.name}</h2>
+                    </div>
+                    <div class="package-price">        
+                        <h4 class="multiline-ellipsis-3">Rs ${menuItem.price}</h4>
+                    </div>    
                 </div>    
-                <p>${menuItem.description}</p>
+                <p class="multiline-ellipsis">${menuItem.description}</p>
             </div>    
-        </div> 
+        </div> </button>
+`;
+
+            menuContainer.appendChild(menuItemElement);
+          }
+        }
+      });
+      // Fetch menu data from Firebase
+      var menuRef = database.ref("international");
+      menuRef.on("value", function (snapshot) {
+        var menuData = snapshot.val();
+
+        // Display menu data on the web page
+        var menuContainer = document.getElementById("menu2");
+        menuContainer.innerHTML = "";
+
+        for (var key in menuData) {
+          if (menuData.hasOwnProperty(key)) {
+            var menuItem = menuData[key];
+            var menuItemElement = document.createElement("div");
+            menuItemElement.innerHTML = `
+            
+
+            <button class="btn-package" onclick="redirectToUrl2('${menuItem.name}')">
+        <div class="packagesBox">
+            <div class="image">
+                <img src="${menuItem.image}" alt="${menuItem.name}" class="menu-image">
+            </div>
+            <div class="content">
+                <div class="package-details">    
+                    <div class="package-name">    
+                        <h2 class="multiline-ellipsis-2">${menuItem.name}</h2>
+                    </div>
+                    <div class="package-price">        
+                        <h4 class="multiline-ellipsis-3">Rs ${menuItem.price}</h4>
+                    </div>    
+                </div>    
+                <p class="multiline-ellipsis">${menuItem.description}</p>
+            </div>    
+        </div> </button>
+`;
+
+            menuContainer.appendChild(menuItemElement);
+          }
+        }
+      });
+      // Fetch menu data from Firebase
+      var menuRef = database.ref("umrah");
+      menuRef.on("value", function (snapshot) {
+        var menuData = snapshot.val();
+
+        // Display menu data on the web page
+        var menuContainer = document.getElementById("menu3");
+        menuContainer.innerHTML = "";
+
+        for (var key in menuData) {
+          if (menuData.hasOwnProperty(key)) {
+            var menuItem = menuData[key];
+            var menuItemElement = document.createElement("div");
+            menuItemElement.innerHTML = `
+            
+
+            <button class="btn-package" onclick="redirectToUrl3('${menuItem.name}')">
+        <div class="packagesBox">
+            <div class="image">
+                <img src="${menuItem.image}" alt="${menuItem.name}" class="menu-image">
+            </div>
+            <div class="content">
+                <div class="package-details">    
+                    <div class="package-name">    
+                        <h2 class="multiline-ellipsis-2">${menuItem.name}</h2>
+                    </div>
+                    <div class="package-price">        
+                        <h4 class="multiline-ellipsis-3">Rs ${menuItem.price}</h4>
+                    </div>    
+                </div>    
+                <p class="multiline-ellipsis">${menuItem.description}</p>
+            </div>    
+        </div> </button>
 `;
 
             menuContainer.appendChild(menuItemElement);
