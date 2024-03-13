@@ -111,6 +111,7 @@
     <label for="itemImageInput">Select Package image:</label>
     <input type="file" id="itemImageInput5" accept="image/*">
   <input type="text" id="itemDescription5" placeholder="Enter visa description">
+    <textarea id="itemDescriptionnext5" placeholder="Enter Visa description for next page" rows="4" cols="50"></textarea>
   <button id="saveItemButton5" onclick="saveItem5()" disabled>Save Item</button>
 
   <h2>Remove Existing Visa </h2>
@@ -121,7 +122,7 @@
   <input type="text" id="itemName4" placeholder="Enter vlog name">
     <label for="itemImageInput">Select vlog image:</label>
     <input type="file" id="itemImageInput4" accept="image/*">
-  <input type="text" id="itemlink" placeholder="Enter vlog link">
+  <input type="text" id="itemlink" placeholder="Enter vlog YouTube video id">
   <button id="saveItemButton4" onclick="saveItem4()" disabled>Save Item</button>
 
   <h2>Remove Existing Vlog </h2>
@@ -576,13 +577,15 @@
       var itemName = document.getElementById("itemName5").value;
       var itemImageInput = document.getElementById("itemImageInput5");
       var itemDescription = document.getElementById("itemDescription5").value;
+      var itemDescriptionnext = document.getElementById("itemDescriptionnext5").value;
       var itemId = itemName;
 
       var item = {
         image: "", // You will need to upload the image to a storage service and get the URL
         name: itemName,
         price: itemPrice,
-        description: itemDescription
+        description: itemDescription, 
+          descriptionnext: itemDescriptionnext
       };
 
       // Upload the image to a storage service and get the URL
