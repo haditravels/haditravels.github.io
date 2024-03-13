@@ -39,3 +39,16 @@
   padding: 10px;
   z-index: 10;
 }
+
+@media (max-width: 450px) {
+  #miniplayer {
+    right: 0;
+    left: 5%;
+    bottom: 0;
+    top: 40%;
+  }
+
+  #miniplayer iframe {
+    width: 40rem;
+  }
+}
