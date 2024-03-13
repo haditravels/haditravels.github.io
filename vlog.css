@@ -52,6 +52,15 @@
     top: 40%;
   }
 
+  .packagesBox {
+    width: 40rem;
+  }
+
+  .packages-box-container {
+    place-items: center;
+    /* height: 500rem !important; */
+  }
+
   #miniplayer iframe {
     width: 40rem;
   }
