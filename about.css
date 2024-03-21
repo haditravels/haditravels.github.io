@@ -290,9 +290,9 @@
     z-index: -1;
   }
   .slider-bg img {
-    width: 120%;
+    /* width: 120%; */
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .hero .slider-item.active .slider-bg {
