@@ -108,6 +108,7 @@
   <div id="messageDiv3"></div>
   <h2>Add new Visa</h2>
   <input type="text" id="itemName5" placeholder="Enter country name">
+    <input type="text" id="itemPrice5" placeholder="Enter Package price">
     <label for="itemImageInput">Select Package image:</label>
     <input type="file" id="itemImageInput5" accept="image/*">
   <input type="text" id="itemDescription5" placeholder="Enter visa description">
@@ -575,6 +576,7 @@
       saveItemButton.disabled = true;
 
       var itemName = document.getElementById("itemName5").value;
+        var itemPrice = document.getElementById("itemPrice5").value;
       var itemImageInput = document.getElementById("itemImageInput5");
       var itemDescription = document.getElementById("itemDescription5").value;
       var itemDescriptionnext = document.getElementById("itemDescriptionnext5").value;
