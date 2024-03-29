@@ -94,6 +94,7 @@ html {
 body {
   background: var(--black-color);
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 /* --------------------------------------------------Preload------------------------------------------ */
