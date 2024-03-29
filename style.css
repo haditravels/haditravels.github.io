@@ -1639,6 +1639,9 @@ form .newsletter {
   html {
     font-size: 50%;
   }
+  body {
+    overflow-y: hidden;
+  }
   .navbar.active {
     transform: translateX(-35rem);
   }
