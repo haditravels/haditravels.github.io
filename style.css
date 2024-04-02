@@ -99,109 +99,91 @@ body {
 
 /* --------------------------------------------------Preload------------------------------------------ */
 
-.preload {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.preloader {
   background-color: var(--blue-color);
-  z-index: 100;
-  display: -ms-grid;
-  display: grid;
-  place-content: center;
-  justify-items: center;
-  -webkit-transition: 250ms ease;
-  -o-transition: 250ms ease;
-  transition: 250ms ease;
+  height: 100vh;
+  width: 100%;
+  z-index: 10000;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.preload > * {
-  -webkit-transition: 250ms ease;
-  -o-transition: 250ms ease;
-  transition: 250ms ease;
+/* //codelessly loader style
+.preloader {
+  display: inline-block;
+  width: 0px;
+  height: 10px;
+} */
+
+/* .preloader {
+  color: #3f51b5;
+  animation: rotate-outer08 1.4s linear infinite;
+} */
+
+.multiColor-loader {
+  display: block;
+  animation: color-anim08 1.4s infinite;
+  width: 10rem;
 }
 
-.preload.loaded > * {
-  opacity: 0;
+.loader-circle {
+  stroke: currentColor;
 }
 
-.preload.loaded {
-  -webkit-transition-delay: 250ms;
-  -o-transition-delay: 250ms;
-  transition-delay: 250ms;
-  -webkit-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  transform: translateY(100%);
+.MuiCircularProgress-circleStatic {
+  transition: stroke-dashoffset 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
 }
 
-.circle {
-  width: 112px;
-  height: 112px;
-  border-radius: 50%;
-  border: 3px solid white;
-  border-block-start-color: hsla(0, 3%, 7%, 1);
-  -webkit-margin-after: 45px;
-  margin-block-end: 45px;
-  -webkit-animation: rotate360 1s linear infinite;
-  animation: rotate360 1s linear infinite;
+.loader-circle-animation {
+  animation: rotate-inner08 1.4s ease-in-out infinite;
+  stroke-dasharray: 80px, 200px;
+  stroke-dashoffset: 0;
 }
 
-@-webkit-keyframes rotate360 {
+@keyframes rotate-outer08 {
   0% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
+    transform-origin: 50% 50%;
   }
+
   100% {
-    -webkit-transform: rotate(1turn);
-    transform: rotate(1turn);
+    transform: rotate(360deg);
   }
 }
 
-@keyframes rotate360 {
+@keyframes rotate-inner08 {
   0% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
+    stroke-dasharray: 1px, 200px;
+    stroke-dashoffset: 0;
   }
+
+  50% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -15px;
+  }
+
   100% {
-    -webkit-transform: rotate(1turn);
-    transform: rotate(1turn);
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -125px;
   }
 }
 
-.preload .text {
-  background-image: var(--loading-text-gradient);
-  background-size: 500%;
-  font-size: calc(2rem + 3vw);
-  font-weight: 700;
-  line-height: 1em;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  -webkit-padding-start: 16px;
-  padding-inline-start: 16px;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 0.5px hsla(40, 12%, 5%, 1);
-  -webkit-animation: loadingText linear 2s infinite;
-  animation: loadingText linear 2s infinite;
-}
-
-@-webkit-keyframes loadingText {
+@keyframes color-anim08 {
   0% {
-    background-position: 100%;
+    color: #4285f4;
   }
-  100% {
-    background-position: 0%;
-  }
-}
 
-@keyframes loadingText {
-  0% {
-    background-position: 100%;
+  25% {
+    color: #ea4335;
   }
-  100% {
-    background-position: 0%;
+
+  50% {
+    color: #f9bb2d;
+  }
+
+  75% {
+    color: #34a853;
   }
 }
 
@@ -838,15 +820,18 @@ aside .pages {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  animation: smoothScale 7s linear forwards infinite;
+  animation: smoothScale 10s linear forwards infinite;
 }
 
 @keyframes smoothScale {
   0% {
     transform: scale(1);
   }
-  100% {
+  50% {
     transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 

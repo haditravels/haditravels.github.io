@@ -1,19 +1,9 @@
 // ---------------------------------------------Preload--------------------------------------------
 
-// loading will end after document is loaded
-
-// const preloader = document.querySelector("[data-preaload]");
-
-// window.addEventListener("load", function () {
-//   preloader.classList.add("loaded");
-//   document.body.classList.add("loaded");
-// });
-
-// let navbar = document.querySelector(".header .navbar");
-
-// document.querySelector("#menu-btn").onclick = () => {
-//   navbar.classList.toggle("active");
-// };
+var loader = document.getElementById("preloader");
+window.addEventListener("load", function () {
+  loader.style.display = "none";
+});
 
 // --------------------------------------------------Sidebar------------------------------------------
 function closePopup() {
@@ -66,7 +56,7 @@ let timeDom = document.querySelector(".slider .time");
 
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
 let timeRunning = 1000;
-let timeAutoNext = 5000;
+let timeAutoNext = 7000;
 
 nextDom.onclick = function () {
   showSlider("next");
